@@ -2,17 +2,17 @@ import { PanelType } from "../common/IToolData";
 import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
 
-export class Base64 extends ToolPanel<Base64> {
+export class UUID extends ToolPanel<UUID> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
-    super(panel, extensionUri, PanelType.base64);
+    super(panel, extensionUri, PanelType.uuid);
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {
-    super.createOrShow(extensionUri, PanelType.base64, "Base64", Base64);
+    super.createOrShow(extensionUri, PanelType.uuid, "UUID", UUID);
   }
 
   public dispose(): void {
     super.dispose();
-    Base64.currentPanel = undefined;
+    UUID.currentPanel = undefined;
   }
 }

@@ -2,6 +2,7 @@ enum PanelType {
   jsonToYaml = "jsonToYaml",
   numberBase = "numberBase",
   base64 = "base64",
+  uuid = "uuid",
 }
 
 export { PanelType };

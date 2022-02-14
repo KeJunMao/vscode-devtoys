@@ -3,6 +3,7 @@ import { PanelType } from "./common/IToolData";
 import { Base64 } from "./Panel/base64";
 import { JsonToYaml } from "./Panel/JsonToYaml";
 import { NumberBase } from "./Panel/NumberBase";
+import { UUID } from "./Panel/UUID";
 import { CodersProvider } from "./Tree/Coders";
 import { ConvertorsProvider } from "./Tree/Convertors";
 import { GeneratorsProvider } from "./Tree/Generators";
@@ -41,6 +42,10 @@ export function activate(context: vscode.ExtensionContext) {
           break;
         case PanelType.base64:
           Base64.createOrShow(context.extensionUri);
+          break;
+        case PanelType.uuid:
+          UUID.createOrShow(context.extensionUri);
+          break;
       }
     })
   );
