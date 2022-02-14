@@ -1,0 +1,101 @@
+{
+  "name": "devtoys",
+  "displayName": "DevToys",
+  "description": "DevToys for VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.64.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:devtoys.helloWorld",
+    "onView:github-kejun-devtoys-convertors",
+    "onView:github-kejun-devtoys"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "devtoys.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "devtoys.showTool",
+        "title": "show Tool"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "github-kejun-devtoys",
+          "title": "DevToys",
+          "icon": "media/tools.svg"
+        }
+      ]
+    },
+    "views": {
+      "github-kejun-devtoys": [
+        {
+          "id": "github-kejun-devtoys-convertors",
+          "name": "Convertors"
+        },
+        {
+          "id": "github-kejun-devtoys-coders",
+          "name": "Encoder/Decoder"
+        },
+        {
+          "id": "github-kejun-devtoys-generators",
+          "name": "Generators"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "rollup -c && webpack",
+    "watch": "concurrently \"rollup -c -w\" \"webpack --watch\"",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@tsconfig/svelte": "^1.0.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.64.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "@vscode/test-electron": "^2.0.3",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.6.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.1.3",
+    "monaco-editor": "0.32.1",
+    "postcss": "^8.4.6",
+    "rollup": "^2.3.4",
+    "rollup-plugin-monaco-editor": "^0.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^6.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^1.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "@vscode/webview-ui-toolkit": "^0.9.1",
+    "yaml": "2.0.0-10"
+  }
+}

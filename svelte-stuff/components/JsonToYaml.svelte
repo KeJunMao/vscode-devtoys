@@ -1,0 +1,72 @@
+<script lang="ts">
+  /// @ts-ignore
+  import * as YAML from "yaml/browser/dist/index";
+  import {
+    vsCodeDivider,
+    vsCodeLink,
+    vsCodeTextArea,
+    provideVSCodeDesignSystem,
+  } from "@vscode/webview-ui-toolkit";
+  provideVSCodeDesignSystem().register(
+    vsCodeDivider(),
+    vsCodeLink(),
+    vsCodeTextArea()
+  );
+  let jsonValue = "";
+  let yamlValue = "";
+
+  const covertorJsonStrToYamlStr = (jsonStr: string): string => {
+    if (jsonStr.trim() === "") {
+      return "";
+    }
+    try {
+      const jsonObj = JSON.parse(jsonStr);
+      const yamlStr = YAML.stringify(jsonObj);
+      return yamlStr;
+    } catch (e) {
+      tsvscode.postMessage({ type: "onError", value: e });
+      return String(e);
+    }
+  };
+  const covertorYamlStrToJsonStr = (yamlStr: string): string => {
+    if (yamlStr.trim() === "") {
+      return "";
+    }
+    try {
+      const yamlObj = YAML.parse(yamlStr);
+      const jsonStr = JSON.stringify(yamlObj);
+      return jsonStr;
+    } catch (e) {
+      tsvscode.postMessage({ type: "onError", value: e });
+      return String(e);
+    }
+  };
+</script>
+
+<h1>JSON to YAML</h1>
+
+<vscode-text-area
+  value={jsonValue}
+  on:input={({ target }) => {
+    jsonValue = target.value;
+    yamlValue = covertorJsonStrToYamlStr(jsonValue);
+  }}
+  style="width: 100%;"
+  resize="none"
+  cols="30"
+  rows="10"
+  placeholder="在这里输入 JSON 字符串">JSON</vscode-text-area
+>
+<br />
+<vscode-text-area
+  value={yamlValue}
+  on:input={({ target }) => {
+    yamlValue = target.value;
+    jsonValue = covertorYamlStrToJsonStr(yamlValue);
+  }}
+  style="width: 100%;"
+  resize="none"
+  cols="30"
+  rows="10"
+  placeholder="在这里输入 YAML 字符串">YAML</vscode-text-area
+>
