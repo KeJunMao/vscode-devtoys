@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { PanelType } from "./common/IToolData";
+import { Base64 } from "./Panel/base64";
 import { JsonToYaml } from "./Panel/JsonToYaml";
 import { NumberBase } from "./Panel/NumberBase";
 import { CodersProvider } from "./Tree/Coders";
@@ -38,6 +39,8 @@ export function activate(context: vscode.ExtensionContext) {
         case PanelType.numberBase:
           NumberBase.createOrShow(context.extensionUri);
           break;
+        case PanelType.base64:
+          Base64.createOrShow(context.extensionUri);
       }
     })
   );

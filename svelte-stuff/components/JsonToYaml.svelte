@@ -2,16 +2,10 @@
   /// @ts-ignore
   import * as YAML from "yaml/browser/dist/index";
   import {
-    vsCodeDivider,
-    vsCodeLink,
     vsCodeTextArea,
     provideVSCodeDesignSystem,
   } from "@vscode/webview-ui-toolkit";
-  provideVSCodeDesignSystem().register(
-    vsCodeDivider(),
-    vsCodeLink(),
-    vsCodeTextArea()
-  );
+  provideVSCodeDesignSystem().register(vsCodeTextArea());
   let jsonValue = "";
   let yamlValue = "";
 
