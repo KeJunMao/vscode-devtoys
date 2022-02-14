@@ -24,7 +24,6 @@
   }}
   style="width: 100%;"
   resize="none"
-  cols="30"
   rows="10"
   placeholder="在这里输入源字符串">source</vscode-text-area
 >
@@ -36,7 +35,6 @@
   }}
   style="width: 100%;"
   resize="none"
-  cols="30"
   rows="10"
   placeholder="在这里输入base64字符串">base64</vscode-text-area
 >
