@@ -3,8 +3,14 @@
   "displayName": "DevToys",
   "description": "DevToys for VSCode",
   "version": "0.0.1",
+  "publisher": "kejun",
+  "license": "GPLv3",
   "engines": {
     "vscode": "^1.64.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KeJunMao/vscode-devtoys"
   },
   "categories": [
     "Other"
@@ -56,7 +62,7 @@
     "vscode:prepublish": "yarn run package",
     "compile": "rollup -c && webpack",
     "watch": "concurrently \"rollup -c -w\" \"webpack --watch\"",
-    "package": "webpack --mode production --devtool hidden-source-map",
+    "package": "rollup -c && webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",

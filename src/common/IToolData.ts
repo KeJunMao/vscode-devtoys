@@ -1,5 +1,11 @@
+enum PanelType {
+  jsonToYaml = "jsonToYaml",
+  numberBase = "numberBase",
+}
+
+export { PanelType };
 export interface IToolData {
   label: string;
-  description: string;
-  panel: string;
+  tooltip: string;
+  panel: PanelType;
 }

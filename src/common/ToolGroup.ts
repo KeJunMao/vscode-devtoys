@@ -16,12 +16,12 @@ export class ToolGrpupProvider implements vscode.TreeDataProvider<ToolItem> {
           (v) =>
             new ToolItem(
               v.label,
-              v.description,
+              v.tooltip,
               vscode.TreeItemCollapsibleState.None,
               {
                 command: "devtoys.showTool",
                 title: "",
-                arguments: [v.label],
+                arguments: [v.panel],
               }
             )
         )

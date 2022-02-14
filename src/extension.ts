@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
+import { PanelType } from "./common/IToolData";
 import { JsonToYaml } from "./Panel/JsonToYaml";
+import { NumberBase } from "./Panel/NumberBase";
 import { CodersProvider } from "./Tree/Coders";
 import { ConvertorsProvider } from "./Tree/Convertors";
 import { GeneratorsProvider } from "./Tree/Generators";
@@ -28,8 +30,15 @@ export function activate(context: vscode.ExtensionContext) {
     })
   );
   context.subscriptions.push(
-    vscode.commands.registerCommand("devtoys.showTool", (data) => {
-      JsonToYaml.createOrShow(context.extensionUri);
+    vscode.commands.registerCommand("devtoys.showTool", (type: PanelType) => {
+      switch (type) {
+        case PanelType.jsonToYaml:
+          JsonToYaml.createOrShow(context.extensionUri);
+          break;
+        case PanelType.numberBase:
+          NumberBase.createOrShow(context.extensionUri);
+          break;
+      }
     })
   );
 }
