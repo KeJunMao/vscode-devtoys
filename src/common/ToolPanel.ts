@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { getNonce } from "../utils";
 import { PanelType } from "./IToolData";
 
-export class ToolPanel<T> {
+export class ToolPanel<V> {
   static currentPanel: ToolPanel<unknown> | undefined;
 
   private readonly _panel: vscode.WebviewPanel;
@@ -10,7 +10,7 @@ export class ToolPanel<T> {
   private _disposables: vscode.Disposable[] = [];
   private _type: PanelType;
 
-  public static createOrShow<T>(
+  public static createOrShow<T extends ToolPanel<unknown>>(
     extensionUri: vscode.Uri,
     type: PanelType,
     title: string,
@@ -19,10 +19,12 @@ export class ToolPanel<T> {
     const column = vscode.window.activeTextEditor
       ? vscode.window.activeTextEditor.viewColumn
       : undefined;
-
-    if (this.currentPanel) {
-      this.currentPanel._panel.reveal(column);
-      this.currentPanel._update();
+    /// @ts-ignore
+    if (toolClass.currentPanel) {
+      /// @ts-ignore
+      toolClass.currentPanel._panel.reveal(column);
+      /// @ts-ignore
+      toolClass.currentPanel._update();
       return;
     }
 
@@ -39,7 +41,8 @@ export class ToolPanel<T> {
       }
     );
 
-    this.currentPanel = new ToolPanel(panel, extensionUri, type);
+    /// @ts-ignore
+    toolClass.currentPanel = new toolClass(panel, extensionUri);
   }
   constructor(
     panel: vscode.WebviewPanel,
@@ -51,11 +54,6 @@ export class ToolPanel<T> {
     this._type = type;
     this._update();
     this._panel.onDidDispose(() => this.dispose(), null, this._disposables);
-  }
-
-  public static kill() {
-    this.currentPanel?.dispose();
-    this.currentPanel = undefined;
   }
 
   public dispose() {
