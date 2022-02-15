@@ -9,6 +9,11 @@ export class CodersProvider extends ToolGrpupProvider {
         tooltip: i18n.t("view.devtoys.coders.base64.tooltip"),
         panel: PanelType.base64,
       },
+      {
+        label: i18n.t("view.devtoys.coders.html.label"),
+        tooltip: i18n.t("view.devtoys.coders.html.tooltip"),
+        panel: PanelType.html,
+      },
     ]);
   }
 }

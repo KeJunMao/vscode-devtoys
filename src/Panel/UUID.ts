@@ -1,6 +1,7 @@
 import { PanelType } from "../common/IToolData";
 import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
+import i18n from "../i18n";
 
 export class UUID extends ToolPanel<UUID> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
@@ -8,7 +9,12 @@ export class UUID extends ToolPanel<UUID> {
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {
-    super.createOrShow(extensionUri, PanelType.uuid, "UUID", UUID);
+    super.createOrShow(
+      extensionUri,
+      PanelType.uuid,
+      i18n.t("view.devtoys.generators.uuid.panel.title"),
+      UUID
+    );
   }
 
   public dispose(): void {

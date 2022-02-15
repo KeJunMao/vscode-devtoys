@@ -7,10 +7,12 @@ import { UUID } from "./Panel/UUID";
 import { CodersProvider } from "./Tree/Coders";
 import { ConvertorsProvider } from "./Tree/Convertors";
 import { GeneratorsProvider } from "./Tree/Generators";
+import { Html } from "./Panel/Html";
 import i18n from "./i18n";
 
 export function activate(context: vscode.ExtensionContext) {
   i18n.init(context.extensionPath);
+
   const convertorsProvider = new ConvertorsProvider();
   vscode.window.registerTreeDataProvider(
     "github-kejun-devtoys-convertors",
@@ -43,6 +45,9 @@ export function activate(context: vscode.ExtensionContext) {
           break;
         case PanelType.uuid:
           UUID.createOrShow(context.extensionUri);
+          break;
+        case PanelType.html:
+          Html.createOrShow(context.extensionUri);
           break;
       }
     })

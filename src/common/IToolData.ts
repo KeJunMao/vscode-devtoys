@@ -3,6 +3,7 @@ enum PanelType {
   numberBase = "numberBase",
   base64 = "base64",
   uuid = "uuid",
+  html = "html",
 }
 
 export { PanelType };

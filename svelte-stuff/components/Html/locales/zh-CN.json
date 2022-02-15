@@ -1,0 +1,10 @@
+{
+  "tool.html.coderTextArea.label": "已编码字符串",
+  "tool.html.coderTextArea.placeholder": "在此处输入编码后的 HTML 字符串",
+  "tool.html.decimalCheckbox.label": "十进制",
+  "tool.html.encodeEverythingCheckbox.label": "编码一切",
+  "tool.html.sourceTextArea.label": "源字符串",
+  "tool.html.sourceTextArea.placeholder": "在此处输入源 HTML 字符串",
+  "tool.html.title": "HTML 编码器/解码器",
+  "tool.html.useNameReferencesCheckbox.label": "使用名称参考"
+}

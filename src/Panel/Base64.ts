@@ -1,6 +1,7 @@
 import { PanelType } from "../common/IToolData";
 import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
+import i18n from "../i18n";
 
 export class Base64 extends ToolPanel<Base64> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
@@ -8,7 +9,12 @@ export class Base64 extends ToolPanel<Base64> {
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {
-    super.createOrShow(extensionUri, PanelType.base64, "Base64", Base64);
+    super.createOrShow(
+      extensionUri,
+      PanelType.base64,
+      i18n.t("view.devtoys.coders.base64.panel.title"),
+      Base64
+    );
   }
 
   public dispose(): void {

@@ -1,6 +1,7 @@
 import { PanelType } from "../common/IToolData";
 import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
+import i18n from "../i18n";
 
 export class JsonToYaml extends ToolPanel<JsonToYaml> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
@@ -11,7 +12,7 @@ export class JsonToYaml extends ToolPanel<JsonToYaml> {
     super.createOrShow(
       extensionUri,
       PanelType.jsonToYaml,
-      "JSON < > YAML",
+      i18n.t("view.devtoys.convertors.jsonToYaml.panel.title"),
       JsonToYaml
     );
   }

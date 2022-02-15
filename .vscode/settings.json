@@ -12,7 +12,6 @@
   "typescript.tsc.autoDetect": "off",
   "i18n-ally.localesPaths": [
     "./locales",
-    "./svelte-stuff/components/**/locales",
     "./svelte-stuff/components/**/locales"
   ],
   "i18n-ally.sourceLanguage": "en",

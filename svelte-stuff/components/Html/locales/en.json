@@ -1,0 +1,10 @@
+{
+  "tool.html.coderTextArea.label": "Encoded",
+  "tool.html.coderTextArea.placeholder": "Enter encoded HTML string here",
+  "tool.html.decimalCheckbox.label": "Decimal",
+  "tool.html.encodeEverythingCheckbox.label": "Encode Everything",
+  "tool.html.sourceTextArea.label": "Source",
+  "tool.html.sourceTextArea.placeholder": "Enter source HTML string here",
+  "tool.html.title": "HTML Encoder/Decoder",
+  "tool.html.useNameReferencesCheckbox.label": "Use Name References"
+}
