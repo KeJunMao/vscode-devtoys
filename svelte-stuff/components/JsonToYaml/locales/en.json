@@ -1,0 +1,7 @@
+{
+  "tool.jsonToYaml.jsonTextArea.label": "JSON",
+  "tool.jsonToYaml.jsonTextArea.placeholder": "Enter JSON string here",
+  "tool.jsonToYaml.title": "JSON < > YAML",
+  "tool.jsonToYaml.yamlTextArea.label": "YAML",
+  "tool.jsonToYaml.yamlTextArea.placeholder": "Enter YAML string here"
+}

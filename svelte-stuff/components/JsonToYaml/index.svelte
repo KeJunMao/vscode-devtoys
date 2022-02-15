@@ -1,6 +1,7 @@
 <script lang="ts">
   /// @ts-ignore
   import * as YAML from "yaml/browser/dist/index";
+  import { _ } from "svelte-i18n";
   import {
     vsCodeTextArea,
     provideVSCodeDesignSystem,
@@ -37,7 +38,7 @@
   };
 </script>
 
-<h1>JSON to YAML</h1>
+<h1>{$_("tool.jsonToYaml.title")}</h1>
 
 <vscode-text-area
   value={jsonValue}
@@ -49,7 +50,8 @@
   resize="none"
   cols="30"
   rows="10"
-  placeholder="在这里输入 JSON 字符串">JSON</vscode-text-area
+  placeholder={$_("tool.jsonToYaml.jsonTextArea.placeholder")}
+  >{$_("tool.jsonToYaml.jsonTextArea.label")}</vscode-text-area
 >
 <br />
 <vscode-text-area
@@ -62,5 +64,6 @@
   resize="none"
   cols="30"
   rows="10"
-  placeholder="在这里输入 YAML 字符串">YAML</vscode-text-area
+  placeholder={$_("tool.jsonToYaml.yamlTextArea.placeholder")}
+  >{$_("tool.jsonToYaml.yamlTextArea.label")}</vscode-text-area
 >

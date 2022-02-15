@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
+
   import {
     vsCodeTextArea,
     provideVSCodeDesignSystem,
@@ -25,8 +27,10 @@
   style="width: 100%;"
   resize="none"
   rows="10"
-  placeholder="在这里输入源字符串">source</vscode-text-area
+  placeholder={$_("tool.base64.sourceTextArea.placeholder")}
 >
+  {$_("tool.base64.sourceTextArea.label")}
+</vscode-text-area>
 <vscode-text-area
   value={base64}
   on:input={({ target }) => {
@@ -36,5 +40,6 @@
   style="width: 100%;"
   resize="none"
   rows="10"
-  placeholder="在这里输入base64字符串">base64</vscode-text-area
+  placeholder={$_("tool.base64.resultTextArea.placeholder")}
+  >{$_("tool.base64.resultTextArea.label")}</vscode-text-area
 >

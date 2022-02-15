@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
+  /// @ts-ignore
   import * as uuid from "uuid";
   import {
     vsCodeTextArea,
@@ -56,16 +58,16 @@
   };
 </script>
 
-<h1>UUID</h1>
+<h1>{$_("tool.uuid.title")}</h1>
 <vscode-checkbox
   checked={hasHyphen}
   on:change={({ target }) => (hasHyphen = target.checked)}
-  >分隔符</vscode-checkbox
+  >{$_("tool.uuid.hasHyphenCheckbox.label")}</vscode-checkbox
 >
 <vscode-checkbox
   checked={isUpperCase}
   on:change={({ target }) => (isUpperCase = target.checked)}
-  >大写</vscode-checkbox
+  >{$_("tool.uuid.isUpperCaseCheckbox.label")}</vscode-checkbox
 >
 <vscode-radio-group
   value={uuidVersion}
@@ -74,7 +76,7 @@
   }}
 >
   <!-- svelte-ignore a11y-label-has-associated-control -->
-  <label slot="label">UUID 版本</label>
+  <label slot="label">{$_("tool.uuid.versionRadioGroup.label")}</label>
   <vscode-radio value="1">v1 (timestamp)</vscode-radio>
   <!-- <vscode-radio value="3">v3 (namespace w/ MD5)</vscode-radio> -->
   <vscode-radio value="4">v4 (random)</vscode-radio>

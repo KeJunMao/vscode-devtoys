@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import {
     provideVSCodeDesignSystem,
     vsCodeTextField,
@@ -31,48 +32,48 @@
   };
 </script>
 
-<h1>Number Base</h1>
+<h1>{$_("tool.numberBase.title")}</h1>
 <vscode-text-field
   value={number2}
   on:input={({ target }) => (number2 = target.value)}
   class="w-full"
 >
-  2 进制
+  {$_("tool.numberBase.binaryInput.label")}
 </vscode-text-field>
 <vscode-text-field
   value={number8}
   on:input={({ target }) => setNumber2(target.value, 8)}
   class="w-full"
 >
-  8 进制
+  {$_("tool.numberBase.octalInput.label")}
 </vscode-text-field>
 <vscode-text-field
   value={number10}
   on:input={({ target }) => setNumber2(target.value, 10)}
   class="w-full"
 >
-  10 进制
+  {$_("tool.numberBase.decimalInput.label")}
 </vscode-text-field>
 <vscode-text-field
   value={number16}
   on:input={({ target }) => setNumber2(target.value, 16)}
   class="w-full"
 >
-  16 进制
+  {$_("tool.numberBase.hexadecimalInput.label")}
 </vscode-text-field>
 <vscode-text-field
   value={number32}
   on:input={({ target }) => setNumber2(target.value, 32)}
   class="w-full"
 >
-  32 进制
+  {$_("tool.numberBase.base32Input.label")}
 </vscode-text-field>
 <vscode-text-field
   value={number36}
   on:input={({ target }) => setNumber2(target.value, 36)}
   class="w-full"
 >
-  36 进制
+  {$_("tool.numberBase.base36Input.label")}
 </vscode-text-field>
 
 <style>

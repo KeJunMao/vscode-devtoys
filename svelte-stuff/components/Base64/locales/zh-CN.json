@@ -1,0 +1,6 @@
+{
+  "tool.base64.resultTextArea.label": "Base64",
+  "tool.base64.resultTextArea.placeholder": "在这里输入 Base64 字符串",
+  "tool.base64.sourceTextArea.label": "源字符串",
+  "tool.base64.sourceTextArea.placeholder": "在这里输入源字符串"
+}

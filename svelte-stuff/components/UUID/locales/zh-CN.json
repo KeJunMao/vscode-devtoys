@@ -1,0 +1,6 @@
+{
+  "tool.uuid.hasHyphenCheckbox.label": "连字符",
+  "tool.uuid.isUpperCaseCheckbox.label": "大写",
+  "tool.uuid.title": "UUID",
+  "tool.uuid.versionRadioGroup.label": "UUID 版本"
+}

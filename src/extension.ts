@@ -7,7 +7,10 @@ import { UUID } from "./Panel/UUID";
 import { CodersProvider } from "./Tree/Coders";
 import { ConvertorsProvider } from "./Tree/Convertors";
 import { GeneratorsProvider } from "./Tree/Generators";
+import i18n from "./i18n";
+
 export function activate(context: vscode.ExtensionContext) {
+  i18n.init(context.extensionPath);
   const convertorsProvider = new ConvertorsProvider();
   vscode.window.registerTreeDataProvider(
     "github-kejun-devtoys-convertors",
@@ -26,11 +29,6 @@ export function activate(context: vscode.ExtensionContext) {
     generatorsProvider
   );
 
-  context.subscriptions.push(
-    vscode.commands.registerCommand("devtoys.helloWorld", () => {
-      vscode.window.showInformationMessage("Hello World from DevToys!");
-    })
-  );
   context.subscriptions.push(
     vscode.commands.registerCommand("devtoys.showTool", (type: PanelType) => {
       switch (type) {

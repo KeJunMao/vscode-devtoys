@@ -1,0 +1,9 @@
+{
+  "tool.numberBase.base32Input.label": "三十二进制",
+  "tool.numberBase.base36Input.label": "三十六进制",
+  "tool.numberBase.binaryInput.label": "二进制",
+  "tool.numberBase.decimalInput.label": "十进制",
+  "tool.numberBase.hexadecimalInput.label": "十六进制",
+  "tool.numberBase.octalInput.label": "八进制",
+  "tool.numberBase.title": "进制转换"
+}

@@ -1,0 +1,14 @@
+{
+  "command.devtoys.showTool.title": "Show Tools",
+  "view.devtoys.coders": "Encoder/Decoder",
+  "view.devtoys.coders.base64.label": "Base64",
+  "view.devtoys.coders.base64.tooltip": "Encode or decode base64",
+  "view.devtoys.convertors": "Convertors",
+  "view.devtoys.convertors.jsonToYaml.label": "JSON < > YAML",
+  "view.devtoys.convertors.jsonToYaml.tooltip": "Convert JSON to YAML",
+  "view.devtoys.convertors.numberBase.label": "Number Base",
+  "view.devtoys.convertors.numberBase.tooltip": "Convert Number Base",
+  "view.devtoys.generators": "Generators",
+  "view.devtoys.generators.uuid.label": "UUID",
+  "view.devtoys.generators.uuid.tooltip": "Generate UUID 1 and 4"
+}

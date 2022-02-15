@@ -1,0 +1,9 @@
+{
+  "tool.numberBase.base32Input.label": "Base 32",
+  "tool.numberBase.base36Input.label": "Base 36",
+  "tool.numberBase.binaryInput.label": "Binary",
+  "tool.numberBase.decimalInput.label": "Decimal",
+  "tool.numberBase.hexadecimalInput.label": "Hexadecimal",
+  "tool.numberBase.octalInput.label": "Octal",
+  "tool.numberBase.title": "Number Base"
+}

@@ -1,0 +1,6 @@
+{
+  "tool.base64.resultTextArea.label": "Base64",
+  "tool.base64.resultTextArea.placeholder": "Enter the base64 string here",
+  "tool.base64.sourceTextArea.label": "Source",
+  "tool.base64.sourceTextArea.placeholder": "Enter the source string here"
+}

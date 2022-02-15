@@ -1,12 +1,12 @@
 import { PanelType } from "../common/IToolData";
 import { ToolGrpupProvider } from "../common/ToolGroup";
-
+import i18n from "../i18n";
 export class CodersProvider extends ToolGrpupProvider {
   constructor() {
     super([
       {
-        label: "Base64",
-        tooltip: "Encode/Decode Base64",
+        label: i18n.t("view.devtoys.coders.base64.label"),
+        tooltip: i18n.t("view.devtoys.coders.base64.tooltip"),
         panel: PanelType.base64,
       },
     ]);

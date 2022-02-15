@@ -107,16 +107,18 @@ export class ToolPanel<V> {
       )
     );
     const nonce = getNonce();
+    const language = vscode.env.language;
 
     return `<!DOCTYPE html>
-  			<html lang="zh">
+  			<html lang="${language}">
   			<head>
   				<meta charset="UTF-8">
   				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'self' 'unsafe-inline'; img-src ${webview.cspSource} https:; script-src 'nonce-${nonce}';">
   				<meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link href="${cssUri}" rel="stylesheet">
           <script nonce="${nonce}">
-              const tsvscode = acquireVsCodeApi();
+              window.tsvscode = acquireVsCodeApi();
+              window.displayLanguage = "${language}";
           </script>
   			</head>
         <body>

@@ -1,0 +1,7 @@
+{
+  "tool.jsonToYaml.jsonTextArea.label": "JSON",
+  "tool.jsonToYaml.jsonTextArea.placeholder": "在此处输入 JSON 字符串",
+  "tool.jsonToYaml.title": "JSON < > YAML",
+  "tool.jsonToYaml.yamlTextArea.label": "YAML",
+  "tool.jsonToYaml.yamlTextArea.placeholder": "在此处输入 YAML 字符串"
+}
