@@ -1,0 +1,10 @@
+<script lang="ts">
+  import { _ } from "svelte-i18n";
+  import {
+    vsCodeTextArea,
+    provideVSCodeDesignSystem,
+  } from "@vscode/webview-ui-toolkit";
+  provideVSCodeDesignSystem().register(vsCodeTextArea());
+</script>
+
+<h1>{{title}}</h1>

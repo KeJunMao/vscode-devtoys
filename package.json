@@ -3,7 +3,7 @@
   "displayName": "DevToys",
   "icon": "media/icon.png",
   "description": "DevToys for VSCode",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "kejun",
   "license": "GPLv3",
   "engines": {
@@ -68,7 +68,8 @@
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
     "i18n:build": "esno scripts/build-i18n.ts",
-    "i18n:dev": "nodemon -w ./locales -e json --exec \"yarn run i18n:build\""
+    "i18n:dev": "nodemon -w ./locales -e json --exec \"yarn run i18n:build\"",
+    "new": "plop"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
@@ -93,6 +94,7 @@
     "mocha": "^9.1.3",
     "monaco-editor": "0.32.1",
     "nodemon": "^2.0.15",
+    "plop": "^3.0.5",
     "postcss": "^8.4.6",
     "rollup": "^2.3.4",
     "rollup-plugin-monaco-editor": "^0.2.0",
