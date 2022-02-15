@@ -1,4 +1,5 @@
 {
+  "tool.uuid.countInput.label": "Count",
   "tool.uuid.hasHyphenCheckbox.label": "Hyphen",
   "tool.uuid.isUpperCaseCheckbox.label": "UpperCase",
   "tool.uuid.title": "UUID",

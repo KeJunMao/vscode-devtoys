@@ -1,4 +1,5 @@
 {
+  "tool.uuid.countInput.label": "数量",
   "tool.uuid.hasHyphenCheckbox.label": "连字符",
   "tool.uuid.isUpperCaseCheckbox.label": "大写",
   "tool.uuid.title": "UUID",

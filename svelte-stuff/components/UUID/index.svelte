@@ -87,7 +87,7 @@
   value={uuidCount}
   on:input={({ target }) => {
     uuidCount = parseInt(target.value);
-  }}>size</vscode-text-field
+  }}>{$_("tool.uuid.countInput.label")}</vscode-text-field
 >
 
 <vscode-text-area value={uuidText} style="width: 100%;" readonly rows="10"
