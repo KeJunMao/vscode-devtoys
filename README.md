@@ -22,22 +22,23 @@ To set up your environment to develop DevToys, run `yarn`.
 
 ### Add New Tool
 
-example add **URL Encoder/Decoder** tool
+example add **JWT Encoder/Decoder** tool
 
 1. `yarn new`
 
 ```
 ❯ yarn new
-? Tool label URL
-? Tool panel title URL Encoder/Decoder
+? Tool label JWT
+? Tool panel title JWT Encoder/Decoder
 ? Tool category Encoder/Decoder
-✔  ++ /svelte-stuff/pages/Url.ts
-✔  ++ /svelte-stuff/components/Url/index.svelte
-✔  ++ /src/Panel/Url.ts
-✔  ++ /svelte-stuff/components/Url/locales/en.json
-✔  ++ /svelte-stuff/components/Url/locales/zh-CN.json
-✔  ++ /svelte-stuff/components/Url/i18n.ts
-✨  Done in 16.82s.
+? Tool webview framework React
+✔  ++ /svelte-stuff/pages/Jwt.tsx
+✔  ++ /svelte-stuff/components/Jwt/index.tsx
+✔  ++ /src/Panel/Jwt.ts
+✔  ++ /svelte-stuff/components/Jwt/locales/en.json
+✔  ++ /svelte-stuff/components/Jwt/locales/zh-CN.json
+✔  ++ /svelte-stuff/components/Jwt/i18n.ts
+✨  Done in 15.52s.
 ```
 
 2. add `PanelType` in `src/common/IToolData.ts`
@@ -45,11 +46,11 @@ example add **URL Encoder/Decoder** tool
 ```ts
 enum PanelType {
   ...,
-  url = "url"
+  jwt = "jwt"
 }
 ```
 
-3. add tree item in `src/Tree`, URL tool is in Coders category,so edit `src/Tree/Coders.ts`
+3. add tree item in `src/Tree`, JWT tool is in Coders category,so edit `src/Tree/Coders.ts`
 
 ```ts
 export class CodersProvider extends ToolGrpupProvider {
@@ -57,9 +58,9 @@ export class CodersProvider extends ToolGrpupProvider {
     super([
       ...,
       {
-        label: i18n.t("view.devtoys.coders.url.label"),
-        tooltip: i18n.t("view.devtoys.coders.url.tooltip"),
-        panel: PanelType.url,
+        label: i18n.t("view.devtoys.coders.jwt.label"),
+        tooltip: i18n.t("view.devtoys.coders.jwt.tooltip"),
+        panel: PanelType.jwt,
       }
     ]);
   }
@@ -72,13 +73,13 @@ export class CodersProvider extends ToolGrpupProvider {
 vscode.commands.registerCommand("devtoys.showTool", (type: PanelType) => {
   switch (type) {
     ...
-    case PanelType.html:
-      Url.createOrShow(context.extensionUri);
+    case PanelType.jwt:
+      jwt.createOrShow(context.extensionUri);
       break;
   }
 })
 ```
 
-5. Make URL tool and I18N key, and then test the tool!
+5. Make JWT tool and I18N key, and then test the tool!
 
 > NOTE: webview i18n file in `svelte-stuff/components/TOOLNAME/locales`, extension i18n file in `locales`
