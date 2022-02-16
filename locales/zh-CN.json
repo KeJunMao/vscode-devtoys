@@ -23,5 +23,8 @@
   "view.devtoys.generators.hash.tooltip": "Hash 生成器",
   "view.devtoys.generators.uuid.label": "UUID",
   "view.devtoys.generators.uuid.panel.title": "UUID",
-  "view.devtoys.generators.uuid.tooltip": "uuid1 和 uuid4 生成器"
+  "view.devtoys.generators.uuid.tooltip": "uuid1 和 uuid4 生成器",
+  "view.devtoys.graphic": "图片",
+  "view.devtoys.noTools": "暂无工具",
+  "view.devtoys.text": "文本"
 }

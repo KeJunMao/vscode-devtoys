@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { IToolData } from "./IToolData";
 import { ToolItem } from "./ToolItem";
+import i18n from "../i18n";
 
 export class ToolGrpupProvider implements vscode.TreeDataProvider<ToolItem> {
   constructor(public readonly tools: IToolData[]) {}
@@ -28,7 +29,11 @@ export class ToolGrpupProvider implements vscode.TreeDataProvider<ToolItem> {
       );
     } else {
       return Promise.resolve([
-        new ToolItem("暂无工具", "", vscode.TreeItemCollapsibleState.None),
+        new ToolItem(
+          i18n.t("view.devtoys.noTools"),
+          "",
+          vscode.TreeItemCollapsibleState.None
+        ),
       ]);
     }
   }

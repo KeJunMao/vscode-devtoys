@@ -3,7 +3,7 @@
   "displayName": "DevToys",
   "icon": "media/icon.png",
   "description": "DevToys for VSCode",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publisher": "kejun",
   "license": "GPLv3",
   "engines": {
@@ -53,6 +53,14 @@
         {
           "id": "github-kejun-devtoys-generators",
           "name": "%view.devtoys.generators%"
+        },
+        {
+          "id": "github-kejun-devtoys-text",
+          "name": "%view.devtoys.text%"
+        },
+        {
+          "id": "github-kejun-devtoys-graphic",
+          "name": "%view.devtoys.graphic%"
         }
       ]
     }

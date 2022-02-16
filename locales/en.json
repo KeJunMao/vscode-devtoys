@@ -23,5 +23,8 @@
   "view.devtoys.generators.hash.tooltip": "Hash Generator",
   "view.devtoys.generators.uuid.label": "UUID",
   "view.devtoys.generators.uuid.panel.title": "UUID",
-  "view.devtoys.generators.uuid.tooltip": "Generate UUID 1 and 4"
+  "view.devtoys.generators.uuid.tooltip": "Generate UUID 1 and 4",
+  "view.devtoys.graphic": "Graphic",
+  "view.devtoys.noTools": "No tools",
+  "view.devtoys.text": "Text"
 }
