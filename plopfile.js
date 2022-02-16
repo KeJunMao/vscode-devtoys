@@ -49,15 +49,28 @@ module.exports = function (plop) {
               return 'Generators';
           }
         }
+      },
+      {
+        type: 'list',
+        name: 'framework',
+        message: 'Tool webview framework',
+        choices: [
+          'React',
+          'Svelte',
+        ],
+        default: "React"
       }
     ],
     actions(data) {
+      const framework = lowerCase(data.framework);
+      const pageExt = framework === 'react' ? 'tsx' : 'ts';
+      const componentExt = framework === 'react' ? 'tsx' : 'svelte';
       const actions = [
         // PAGE
         {
           type: 'add',
-          path: 'svelte-stuff/pages/{{pascalCase label}}.ts',
-          templateFile: 'plop-template/svelte-stuff/page/index.hbs',
+          path: `svelte-stuff/pages/{{pascalCase label}}.${pageExt}`,
+          templateFile: `plop-template/svelte-stuff/page/${framework}/index.hbs`,
           data: {
             component: sentenceCase(data.label),
           }
@@ -65,8 +78,8 @@ module.exports = function (plop) {
         // COMPONENT
         {
           type: 'add',
-          path: 'svelte-stuff/components/{{sentenceCase label}}/index.svelte',
-          templateFile: 'plop-template/svelte-stuff/component/index.hbs',
+          path: `svelte-stuff/components/{{sentenceCase label}}/index.${componentExt}`,
+          templateFile: `plop-template/svelte-stuff/component/${framework}/index.hbs`,
           data: {
             title: titleCase(data.title),
           }
@@ -96,7 +109,7 @@ module.exports = function (plop) {
         {
           type: 'add',
           path: 'svelte-stuff/components/{{sentenceCase label}}/i18n.ts',
-          templateFile: 'plop-template/svelte-stuff/component/i18n.hbs',
+          templateFile: `plop-template/svelte-stuff/component/${framework}/i18n.hbs`,
         },
         // // TODO: TREE src/Tree
         // {
