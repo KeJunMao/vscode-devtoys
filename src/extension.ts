@@ -10,6 +10,7 @@ import { GeneratorsProvider } from "./Tree/Generators";
 import { Html } from "./Panel/Html";
 import i18n from "./i18n";
 import { Url } from "./Panel/Url";
+import { Hash } from "./Panel/Hash";
 
 export function activate(context: vscode.ExtensionContext) {
   i18n.init(context.extensionPath);
@@ -52,6 +53,9 @@ export function activate(context: vscode.ExtensionContext) {
           break;
         case PanelType.url:
           Url.createOrShow(context.extensionUri);
+          break;
+        case PanelType.hash:
+          Hash.createOrShow(context.extensionUri);
           break;
       }
     })

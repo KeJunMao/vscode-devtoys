@@ -19,7 +19,7 @@
       const yamlStr = YAML.stringify(jsonObj);
       return yamlStr;
     } catch (e) {
-      tsvscode.postMessage({ type: "onError", value: e });
+      tsvscode.postMessage({ type: "onError", value: String(e) });
       return String(e);
     }
   };
@@ -32,7 +32,7 @@
       const jsonStr = JSON.stringify(yamlObj);
       return jsonStr;
     } catch (e) {
-      tsvscode.postMessage({ type: "onError", value: e });
+      tsvscode.postMessage({ type: "onError", value: String(e) });
       return String(e);
     }
   };

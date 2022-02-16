@@ -1,0 +1,10 @@
+{
+  "tool.hash.dropInput.label": "Drop",
+  "tool.hash.dropInput.placeholder": "Enter RC4Drop here",
+  "tool.hash.hashTypeDropdown.label": "Hash Type",
+  "tool.hash.keyInput.label": "Key",
+  "tool.hash.resultTextArea.label": "Encrypted",
+  "tool.hash.saltInput.label": "Salt",
+  "tool.hash.sourceTextArea.label": "Source",
+  "tool.hash.title": "Hash Generator"
+}

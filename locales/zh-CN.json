@@ -1,6 +1,7 @@
 {
   "command.devtoys.showTool.title": "打开工具",
   "view.devtoys.Coders.url.panel.title": "URL 编码器/解码器",
+  "view.devtoys.Generators.hash.panel.title": "Hash 生成器",
   "view.devtoys.coders": "编码器/解码器",
   "view.devtoys.coders.base64.label": "Base64",
   "view.devtoys.coders.base64.panel.title": "Base64 编码器/解码器",
@@ -18,6 +19,8 @@
   "view.devtoys.convertors.numberBase.panel.title": "进制转换",
   "view.devtoys.convertors.numberBase.tooltip": "2到36进制转换",
   "view.devtoys.generators": "生成器",
+  "view.devtoys.generators.hash.label": "Hash",
+  "view.devtoys.generators.hash.tooltip": "Hash 生成器",
   "view.devtoys.generators.uuid.label": "UUID",
   "view.devtoys.generators.uuid.panel.title": "UUID",
   "view.devtoys.generators.uuid.tooltip": "uuid1 和 uuid4 生成器"

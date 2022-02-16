@@ -5,6 +5,7 @@ enum PanelType {
   uuid = "uuid",
   html = "html",
   url = "url",
+  hash = "hash"
 }
 
 export { PanelType };

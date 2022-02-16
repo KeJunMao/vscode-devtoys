@@ -1,0 +1,10 @@
+{
+  "tool.hash.dropInput.label": "Drop",
+  "tool.hash.dropInput.placeholder": "请输入要丢弃的密匙初始数量",
+  "tool.hash.hashTypeDropdown.label": "Hash 类型",
+  "tool.hash.keyInput.label": "密钥",
+  "tool.hash.resultTextArea.label": "加密后的字符串",
+  "tool.hash.saltInput.label": "盐",
+  "tool.hash.sourceTextArea.label": "源字符串",
+  "tool.hash.title": "Hash 生成器"
+}

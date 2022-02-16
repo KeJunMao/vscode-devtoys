@@ -10,6 +10,11 @@ export class GeneratorsProvider extends ToolGrpupProvider {
         tooltip: i18n.t("view.devtoys.generators.uuid.tooltip"),
         panel: PanelType.uuid,
       },
+      {
+        label: i18n.t("view.devtoys.generators.hash.label"),
+        tooltip: i18n.t("view.devtoys.generators.hash.tooltip"),
+        panel: PanelType.hash,
+      },
     ]);
   }
 }
