@@ -1,0 +1,5 @@
+{
+  "tool.Url.resultTextArea.label": "已编码字符串",
+  "tool.Url.sourceTextArea.label": "源字符串",
+  "tool.Url.title": "URL 编码器/解码器"
+}

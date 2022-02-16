@@ -8,6 +8,7 @@ import typescript from "@rollup/plugin-typescript";
 import path from "path";
 import fs from "fs";
 import postcss from 'rollup-plugin-postcss';
+import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -17,6 +18,7 @@ export default fs
     const name = input.split(".")[0];
     return {
       input: "svelte-stuff/pages/" + input,
+      external: ['react', 'react-dom'],
       output: {
         sourcemap: true,
         format: "iife",
@@ -25,6 +27,10 @@ export default fs
         inlineDynamicImports: true,
       },
       plugins: [
+        replace({
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          "process.env.NODE_ENV": production ? JSON.stringify('production') : JSON.stringify('development'),
+        }),
         svelte({
           // enable run-time checks when not in production
           dev: !production,

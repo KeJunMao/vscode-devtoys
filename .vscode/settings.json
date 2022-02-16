@@ -25,6 +25,7 @@
   "i18n-ally.enabledFrameworks": [
     "vscode",
     "svelte",
+    "react",
     "general"
   ],
 }

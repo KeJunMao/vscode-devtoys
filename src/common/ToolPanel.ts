@@ -92,6 +92,9 @@ export class ToolPanel<V> {
   }
 
   private _getHtmlForWebview(webview: vscode.Webview) {
+    const venderUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "media", `vender.js`)
+    );
     const scriptUri = webview.asWebviewUri(
       vscode.Uri.joinPath(
         this._extensionUri,
@@ -122,7 +125,9 @@ export class ToolPanel<V> {
           </script>
   			</head>
         <body>
+          <div id='root'></div>
   			</body>
+  				<script nonce="${nonce}" src="${venderUri}"></script>
   				<script nonce="${nonce}" src="${scriptUri}"></script>
   			</html>`;
   }

@@ -4,6 +4,7 @@ enum PanelType {
   base64 = "base64",
   uuid = "uuid",
   html = "html",
+  url = "url",
 }
 
 export { PanelType };

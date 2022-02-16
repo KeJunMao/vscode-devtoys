@@ -9,6 +9,7 @@ import { ConvertorsProvider } from "./Tree/Convertors";
 import { GeneratorsProvider } from "./Tree/Generators";
 import { Html } from "./Panel/Html";
 import i18n from "./i18n";
+import { Url } from "./Panel/Url";
 
 export function activate(context: vscode.ExtensionContext) {
   i18n.init(context.extensionPath);
@@ -48,6 +49,9 @@ export function activate(context: vscode.ExtensionContext) {
           break;
         case PanelType.html:
           Html.createOrShow(context.extensionUri);
+          break;
+        case PanelType.url:
+          Url.createOrShow(context.extensionUri);
           break;
       }
     })

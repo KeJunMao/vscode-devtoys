@@ -1,5 +1,6 @@
 {
   "command.devtoys.showTool.title": "Show Tools",
+  "view.devtoys.Coders.url.panel.title": "URL Encoder/Decoder",
   "view.devtoys.coders": "Encoder/Decoder",
   "view.devtoys.coders.base64.label": "Base64",
   "view.devtoys.coders.base64.panel.title": "Base64 Encoder/Decoder",
@@ -7,6 +8,8 @@
   "view.devtoys.coders.html.label": "HTML",
   "view.devtoys.coders.html.panel.title": "HTML Encoder/Decoder",
   "view.devtoys.coders.html.tooltip": "Encode HTML or decode HTML",
+  "view.devtoys.coders.url.label": "URL",
+  "view.devtoys.coders.url.tooltip": "Encode URL or decode URL",
   "view.devtoys.convertors": "Convertors",
   "view.devtoys.convertors.jsonToYaml.label": "JSON < > YAML",
   "view.devtoys.convertors.jsonToYaml.panel.title": "JSON < > YAML",
