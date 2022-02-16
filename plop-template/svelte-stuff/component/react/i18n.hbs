@@ -13,5 +13,6 @@ i18n.use(initReactI18next).init({
     },
   },
   lng: window.displayLanguage,
+  lowerCaseLng: true,
   fallbackLng: "en",
 });
