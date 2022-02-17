@@ -1,4 +1,6 @@
 {
+  "command.devtoys.searchTool.placeHolder": "Select One Tool",
+  "command.devtoys.searchTool.title": "Search Tool",
   "command.devtoys.showTool.title": "Show Tools",
   "view.devtoys.Coders.url.panel.title": "URL Encoder/Decoder",
   "view.devtoys.Generators.hash.panel.title": "Hash Generator",

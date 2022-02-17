@@ -3,7 +3,7 @@
   "displayName": "DevToys",
   "icon": "media/icon.png",
   "description": "DevToys for VSCode",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "publisher": "kejun",
   "license": "GPLv3",
   "engines": {
@@ -25,7 +25,14 @@
     "commands": [
       {
         "command": "devtoys.showTool",
-        "title": "%command.devtoys.showTool.title%"
+        "title": "%command.devtoys.showTool.title%",
+        "category": "DevToys"
+      },
+      {
+        "command": "devtoys.searchTool",
+        "title": "%command.devtoys.searchTool.title%",
+        "category": "DevToys",
+        "icon": "$(search)"
       }
     ],
     "viewsContainers": {
@@ -42,6 +49,15 @@
         {
           "id": "github-kejun-devtoys",
           "name": "DevToys"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "devtoys.searchTool",
+          "when": "view == github-kejun-devtoys",
+          "group": "navigation@0"
         }
       ]
     }

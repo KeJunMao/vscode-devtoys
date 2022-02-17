@@ -1,4 +1,6 @@
 {
+  "command.devtoys.searchTool.placeHolder": "请选择工具",
+  "command.devtoys.searchTool.title": "搜索工具",
   "command.devtoys.showTool.title": "打开工具",
   "view.devtoys.Coders.url.panel.title": "URL 编码器/解码器",
   "view.devtoys.Generators.hash.panel.title": "Hash 生成器",

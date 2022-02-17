@@ -20,6 +20,27 @@ export function activate(context: vscode.ExtensionContext) {
   devToysTreeDataProvider.initialize(context);
 
   context.subscriptions.push(
+    vscode.commands.registerCommand("devtoys.searchTool", () => {
+      const choice = vscode.window.showQuickPick(
+        explorerNodeManager.getAllNodes().map((node) => ({
+          label: node.label,
+          description: node.tooltip,
+          detail: node.panel as string,
+          value: node,
+        })),
+        {
+          matchOnDescription: true,
+          matchOnDetail: true,
+          placeHolder: i18n.t("command.devtoys.searchTool.placeHolder"),
+        }
+      );
+      if (!choice) {
+        return;
+      }
+      choice.then((value) => {
+        vscode.commands.executeCommand("devtoys.showTool", value?.value);
+      });
+    }),
     vscode.commands.registerCommand("devtoys.showTool", (node: DevToysNode) => {
       switch (node.panel) {
         case PanelType.jsonToYaml:
