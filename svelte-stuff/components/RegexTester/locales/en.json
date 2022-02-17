@@ -1,0 +1,11 @@
+{
+  "tool.regexTester.codebox.label": "Regex",
+  "tool.regexTester.codebox.option.g": "Global Match",
+  "tool.regexTester.codebox.option.i": "Ignore Case",
+  "tool.regexTester.codebox.option.m": "Multiline",
+  "tool.regexTester.codebox.option.s": "DotAll",
+  "tool.regexTester.codebox.option.u": "Unicode",
+  "tool.regexTester.codebox.option.y": "Sticky",
+  "tool.regexTester.matchbox.label": "Matches",
+  "tool.regexTester.title": "Regex Tester"
+}

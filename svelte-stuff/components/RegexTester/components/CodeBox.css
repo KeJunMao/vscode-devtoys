@@ -1,0 +1,57 @@
+.regex-input__root {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  color: var(--input-foreground);
+  background: var(--input-background);
+  border-radius: calc(var(--corner-radius) * 1px);
+  border: calc(var(--border-width) * 1px) solid var(--dropdown-border);
+  height: calc(var(--input-height) * 1px);
+  min-width: var(--input-min-width);
+}
+.codebox-error .regex-input__root {
+  background: var(--vscode-inputValidation-errorBackground);
+}
+.regex-input__control {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  appearance: none;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  font-stretch: inherit;
+  font-family: inherit;
+  background: transparent;
+  color: inherit;
+  height: calc(100% - (var(--design-unit) * 1px));
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: none;
+  padding: 0 calc(var(--design-unit) * 2px + 1px);
+  font-size: var(--type-ramp-base-font-size);
+  line-height: var(--type-ramp-base-line-height);
+}
+.regex-input__label {
+  display: block;
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: var(--type-ramp-base-font-size);
+  line-height: var(--type-ramp-base-line-height);
+  margin-bottom: calc(var(--design-unit) * 1px);
+}
+
+:host(:hover:not([disabled])) .regex-input__root {
+  background: var(--input-background);
+  border-color: var(--dropdown-border);
+}
+:host(:active:not([disabled])) .regex-input__root {
+  background: var(--input-background);
+  border-color: var(--focus-border);
+}
+:host(:focus-within:not([disabled])) .regex-input__root {
+  border-color: var(--focus-border);
+}

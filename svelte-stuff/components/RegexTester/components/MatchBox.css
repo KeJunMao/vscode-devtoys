@@ -1,0 +1,29 @@
+.matchbox-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 0 !important;
+  height: auto;
+}
+.highlights {
+  box-sizing: border-box;
+  margin-top: calc(var(--design-unit) * 1px);
+  position: absolute;
+  top: calc(var(--type-ramp-base-font-size) + calc(var(--design-unit) * 1px));
+  left: 0;
+  width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-spacing: 0;
+  color: transparent;
+  font-size: var(--type-ramp-base-font-size);
+  line-height: var(--type-ramp-base-line-height);
+  padding: calc(var(--design-unit) * 2px + 1px);
+  border: calc(var(--border-width) * 1px) solid var(--dropdown-border);
+  background: var(--input-background);
+  height: 100%;
+}
+
+mark {
+  background-color: var(--focus-border);
+  color: transparent;
+}

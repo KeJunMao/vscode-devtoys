@@ -26,5 +26,8 @@
   "view.devtoys.generators.uuid.tooltip": "Generate UUID 1 and 4",
   "view.devtoys.graphic": "Graphic",
   "view.devtoys.noTools": "No tools",
-  "view.devtoys.text": "Text"
+  "view.devtoys.text": "Text",
+  "view.devtoys.text.regexTester.label": "Regex Tester",
+  "view.devtoys.text.regexTester.panel.title": "Regex Tester",
+  "view.devtoys.text.regexTester.tooltip": "Regex Tester"
 }

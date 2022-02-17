@@ -26,5 +26,8 @@
   "view.devtoys.generators.uuid.tooltip": "uuid1 和 uuid4 生成器",
   "view.devtoys.graphic": "图片",
   "view.devtoys.noTools": "暂无工具",
-  "view.devtoys.text": "文本"
+  "view.devtoys.text": "文本",
+  "view.devtoys.text.regexTester.label": "正则表达式测试",
+  "view.devtoys.text.regexTester.panel.title": "正则表达式测试",
+  "view.devtoys.text.regexTester.tooltip": "正则表达式测试"
 }

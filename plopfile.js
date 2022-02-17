@@ -37,16 +37,16 @@ module.exports = function (plop) {
         choices: [
           'Encoder/Decoder',
           'Convertors',
-          'Generators'
+          'Generators',
+          'Text',
+          'Graphic'
         ],
         filter(val) {
           switch (val) {
             case 'Encoder/Decoder':
               return 'Coders';
-            case 'Convertors':
-              return 'Convertors';
-            case 'Generators':
-              return 'Generators';
+            default:
+              return val;
           }
         }
       },
@@ -78,7 +78,7 @@ module.exports = function (plop) {
         // COMPONENT
         {
           type: 'add',
-          path: `svelte-stuff/components/{{sentenceCase label}}/index.${componentExt}`,
+          path: `svelte-stuff/components/{{pascalCase label}}/index.${componentExt}`,
           templateFile: `plop-template/svelte-stuff/component/${framework}/index.hbs`,
           data: {
             title: titleCase(data.title),

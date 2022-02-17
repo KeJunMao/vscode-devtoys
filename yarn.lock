@@ -239,6 +239,11 @@
   resolved "https://registry.npmmirror.com/@tsconfig/svelte/-/svelte-1.0.13.tgz#2fa34376627192c0d643ce54964915e2bd3a58e4"
   integrity sha512-5lYJP45Xllo4yE/RUBccBT32eBlRDbqN8r1/MIvQbKxW3aFqaYPCNgm8D5V20X4ShHcwvYWNlKg3liDh1MlBoA==
 
+"@types/autosize@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.npmmirror.com/@types/autosize/-/autosize-4.0.1.tgz#999a7c305b96766248044ebaac1a0299961f3b61"
+  integrity sha512-iPJT/FCaSO79G6j+9n6gmFc5nhxZ1gDrA2UAvb5FslJ6FJQZnDfbBU0qp5vpp0Cbjj7+gOyjuWZ7RrXvRuETaA==
+
 "@types/crypto-js@^4.1.1":
   version "4.1.1"
   resolved "https://registry.npmmirror.com/@types/crypto-js/-/crypto-js-4.1.1.tgz#602859584cecc91894eb23a4892f38cfa927890d"
@@ -775,6 +780,11 @@ ast-types@0.14.2:
   integrity sha512-O0yuUDnZeQDL+ncNGlJ78BiO4jnYI3bvMsD5prT0/nsgijG/LpNBIr63gTjVTNsiGkgQhiyCShTgxt8oXOrklA==
   dependencies:
     tslib "^2.0.1"
+
+autosize@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npmmirror.com/autosize/-/autosize-5.0.1.tgz#ed269b0fa9b7eb47627048a1bb3299e99e003a0f"
+  integrity sha512-UIWUlE4TOVPNNj2jjrU39wI4hEYbneUypEqcyRmRFIx5CC2gNdg3rQr+Zh7/3h6egbBvm33TDQjNQKtj9Tk1HA==
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -3827,6 +3837,11 @@ regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
   version "0.13.9"
   resolved "https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
   integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
+
+regex-colorize@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/regex-colorize/-/regex-colorize-0.0.3.tgz#33aabc607b08aa45f26e70c03b7f4066d6fff441"
+  integrity sha512-y+GIlZUqhLQ48T1dZ/FRax14lkVZD1NE3/f7xKuBaasiiMLF5T26Ahjym+vswKPDrtMSfElRr+XPAIHx0AT2Hw==
 
 regexpp@^3.2.0:
   version "3.2.0"

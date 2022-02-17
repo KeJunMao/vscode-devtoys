@@ -11,6 +11,8 @@ import { Html } from "./Panel/Html";
 import i18n from "./i18n";
 import { Url } from "./Panel/Url";
 import { Hash } from "./Panel/Hash";
+import { RegexTester } from "./Panel/RegexTester";
+import { TextProvider } from "./Tree/Text";
 
 export function activate(context: vscode.ExtensionContext) {
   i18n.init(context.extensionPath);
@@ -31,6 +33,12 @@ export function activate(context: vscode.ExtensionContext) {
   vscode.window.registerTreeDataProvider(
     "github-kejun-devtoys-generators",
     generatorsProvider
+  );
+
+  const textProvider = new TextProvider();
+  vscode.window.registerTreeDataProvider(
+    "github-kejun-devtoys-text",
+    textProvider
   );
 
   context.subscriptions.push(
@@ -57,6 +65,8 @@ export function activate(context: vscode.ExtensionContext) {
         case PanelType.hash:
           Hash.createOrShow(context.extensionUri);
           break;
+        case PanelType.regexTester:
+          RegexTester.createOrShow(context.extensionUri);
       }
     })
   );

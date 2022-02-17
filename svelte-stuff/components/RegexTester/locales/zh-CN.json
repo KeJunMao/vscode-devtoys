@@ -1,0 +1,11 @@
+{
+  "tool.regexTester.codebox.label": "正则表达式",
+  "tool.regexTester.codebox.option.g": "全局匹配",
+  "tool.regexTester.codebox.option.i": "忽略大小写",
+  "tool.regexTester.codebox.option.m": "多行搜索",
+  "tool.regexTester.codebox.option.s": "匹配新行",
+  "tool.regexTester.codebox.option.u": "Unicode",
+  "tool.regexTester.codebox.option.y": "Sticky",
+  "tool.regexTester.matchbox.label": "匹配结果",
+  "tool.regexTester.title": "正则表达式测试"
+}

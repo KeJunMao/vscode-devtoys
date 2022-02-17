@@ -5,7 +5,8 @@ enum PanelType {
   uuid = "uuid",
   html = "html",
   url = "url",
-  hash = "hash"
+  hash = "hash",
+  regexTester = "regexTester",
 }
 
 export { PanelType };
