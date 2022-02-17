@@ -70,7 +70,7 @@ module.exports = function (plop) {
         // PAGE
         {
           type: 'add',
-          path: `svelte-stuff/pages/{{pascalCase label}}.${pageExt}`,
+          path: `svelte-stuff/pages/{{sentenceCase label}}.${pageExt}`,
           templateFile: `plop-template/svelte-stuff/page/${framework}/index.hbs`,
           data: {
             component: pascalCase(data.label),
