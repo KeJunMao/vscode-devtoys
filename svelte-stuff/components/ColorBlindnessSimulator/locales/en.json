@@ -1,0 +1,13 @@
+{
+  "tool.colorBlindnessSimulator.deficiency.item.achromatopsia": "Achromatopsia",
+  "tool.colorBlindnessSimulator.deficiency.item.deuteranopia": "Deuteranopia",
+  "tool.colorBlindnessSimulator.deficiency.item.protanopia": "Protanopia",
+  "tool.colorBlindnessSimulator.deficiency.item.tritanopia": "Tritanopia",
+  "tool.colorBlindnessSimulator.deficiency.title": "Deficiency",
+  "tool.colorBlindnessSimulator.dragAreaMessage.link": "Click upload",
+  "tool.colorBlindnessSimulator.dragAreaMessage.title": "Drag file here, or",
+  "tool.colorBlindnessSimulator.original.label": "Original",
+  "tool.colorBlindnessSimulator.showOriginal.label": "Show Original",
+  "tool.colorBlindnessSimulator.simulated.label": "Simulated",
+  "tool.colorBlindnessSimulator.title": "Color Blindness Simulator"
+}

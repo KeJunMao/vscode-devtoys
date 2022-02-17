@@ -3,7 +3,7 @@
   "displayName": "DevToys",
   "icon": "media/icon.png",
   "description": "DevToys for VSCode",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher": "kejun",
   "license": "GPLv3",
   "engines": {
@@ -80,6 +80,7 @@
     "new": "plop"
   },
   "devDependencies": {
+    "@bjornlu/colorblind": "^1.0.3",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.0",

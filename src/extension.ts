@@ -13,6 +13,8 @@ import { Url } from "./Panel/Url";
 import { Hash } from "./Panel/Hash";
 import { RegexTester } from "./Panel/RegexTester";
 import { TextProvider } from "./Tree/Text";
+import { GraphicProvider } from "./Tree/Graphic";
+import { ColorBlindnessSimulator } from "./Panel/ColorBlindnessSimulator";
 
 export function activate(context: vscode.ExtensionContext) {
   i18n.init(context.extensionPath);
@@ -41,6 +43,12 @@ export function activate(context: vscode.ExtensionContext) {
     textProvider
   );
 
+  const graphicProvider = new GraphicProvider();
+  vscode.window.registerTreeDataProvider(
+    "github-kejun-devtoys-graphic",
+    graphicProvider
+  );
+
   context.subscriptions.push(
     vscode.commands.registerCommand("devtoys.showTool", (type: PanelType) => {
       switch (type) {
@@ -67,6 +75,10 @@ export function activate(context: vscode.ExtensionContext) {
           break;
         case PanelType.regexTester:
           RegexTester.createOrShow(context.extensionUri);
+          break;
+        case PanelType.colorBlindnessSimulator:
+          ColorBlindnessSimulator.createOrShow(context.extensionUri);
+          break;
       }
     })
   );

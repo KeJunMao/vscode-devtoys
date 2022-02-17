@@ -7,6 +7,7 @@ enum PanelType {
   url = "url",
   hash = "hash",
   regexTester = "regexTester",
+  colorBlindnessSimulator = "colorBlindnessSimulator",
 }
 
 export { PanelType };

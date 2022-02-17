@@ -30,6 +30,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@bjornlu/colorblind@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/@bjornlu/colorblind/-/colorblind-1.0.3.tgz#556289e01c3aa5c065bad98af6cfcfac17305c5f"
+  integrity sha512-RG9W0BuFib5xN19R4U1dFK7s26+UPiJqHdwqawpvH7sywXJ6zc37onPpRpnFP0aNuKLhhmuitqPAXxLxOA+HgQ==
+
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.6"
   resolved "https://registry.npmmirror.com/@discoveryjs/json-ext/-/json-ext-0.5.6.tgz#d5e0706cf8c6acd8c6032f8d54070af261bbbb2f"

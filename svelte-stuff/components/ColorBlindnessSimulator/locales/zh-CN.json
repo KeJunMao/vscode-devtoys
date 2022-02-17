@@ -1,0 +1,13 @@
+{
+  "tool.colorBlindnessSimulator.deficiency.item.achromatopsia": "全色盲",
+  "tool.colorBlindnessSimulator.deficiency.item.deuteranopia": "绿色盲",
+  "tool.colorBlindnessSimulator.deficiency.item.protanopia": "红色盲",
+  "tool.colorBlindnessSimulator.deficiency.item.tritanopia": "蓝色盲",
+  "tool.colorBlindnessSimulator.deficiency.title": "模式",
+  "tool.colorBlindnessSimulator.dragAreaMessage.link": "点击上传",
+  "tool.colorBlindnessSimulator.dragAreaMessage.title": "将文件拖动到此处，或",
+  "tool.colorBlindnessSimulator.original.label": "原图",
+  "tool.colorBlindnessSimulator.showOriginal.label": "显示原图",
+  "tool.colorBlindnessSimulator.simulated.label": "模拟图",
+  "tool.colorBlindnessSimulator.title": "色盲模拟器"
+}

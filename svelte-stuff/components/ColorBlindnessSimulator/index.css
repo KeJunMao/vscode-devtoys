@@ -1,0 +1,42 @@
+.drag-area {
+  width: 100%;
+  height: 200px;
+  border: calc(var(--border-width) * 2px) dashed;
+  border-color: var(--dropdown-border);
+  border-radius: calc(var(--corner-radius) * 1px);
+  background: var(--input-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.canvas-section {
+  display: flex;
+}
+
+.canvas-section__label {
+  display: block;
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: var(--type-ramp-base-font-size);
+  line-height: var(--type-ramp-base-line-height);
+  margin-bottom: calc(var(--design-unit) * 1px);
+}
+
+.canvas-section canvas {
+  background: var(--input-background);
+}
+
+.canvas-section__block.hidden {
+  position: absolute;
+  opacity: 0;
+}
+
+.canvas-section__block + .canvas-section__block {
+  margin-left: 10px;
+}
+.canvas-section__block.hidden + .canvas-section__block {
+  margin-left: 0;
+}

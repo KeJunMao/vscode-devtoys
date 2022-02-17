@@ -5,6 +5,7 @@ module.exports = function (plop) {
   const sentenceCase = plop.getHelper('sentenceCase');
   const titleCase = plop.getHelper('titleCase');
   const lowerCase = plop.getHelper('lowerCase');
+  const pascalCase = plop.getHelper('pascalCase');
   plop.setGenerator('tool', {
     description: 'this is a skeleton plopfile',
     prompts: [
@@ -72,7 +73,7 @@ module.exports = function (plop) {
           path: `svelte-stuff/pages/{{pascalCase label}}.${pageExt}`,
           templateFile: `plop-template/svelte-stuff/page/${framework}/index.hbs`,
           data: {
-            component: sentenceCase(data.label),
+            component: pascalCase(data.label),
           }
         },
         // COMPONENT
@@ -87,28 +88,28 @@ module.exports = function (plop) {
         // PANEL
         {
           type: 'add',
-          path: 'src/Panel/{{sentenceCase label}}.ts',
+          path: 'src/Panel/{{pascalCase label}}.ts',
           templateFile: 'plop-template/panel/index.hbs',
           data: {
-            className: sentenceCase(data.label),
-            panelType: lowerCase(data.label),
+            className: pascalCase(data.label),
+            panelType: sentenceCase(data.label),
             category: lowerCase(data.category),
           }
         },
         // COMPONENT I18N
         {
           type: 'add',
-          path: 'svelte-stuff/components/{{sentenceCase label}}/locales/en.json',
+          path: 'svelte-stuff/components/{{pascalCase label}}/locales/en.json',
           templateFile: 'plop-template/svelte-stuff/component/i18n/en.json',
         },
         {
           type: 'add',
-          path: 'svelte-stuff/components/{{sentenceCase label}}/locales/zh-CN.json',
+          path: 'svelte-stuff/components/{{pascalCase label}}/locales/zh-CN.json',
           templateFile: 'plop-template/svelte-stuff/component/i18n/zh-CN.json',
         },
         {
           type: 'add',
-          path: 'svelte-stuff/components/{{sentenceCase label}}/i18n.ts',
+          path: 'svelte-stuff/components/{{pascalCase label}}/i18n.ts',
           templateFile: `plop-template/svelte-stuff/component/${framework}/i18n.hbs`,
         },
         // // TODO: TREE src/Tree
