@@ -1,5 +1,3 @@
-import * as os from "os";
-import * as path from "path";
 import * as vscode from "vscode";
 import { Category } from "../shared";
 import { DevToysNode } from "./DevToysNode";
@@ -30,6 +28,7 @@ export class DevToysTreeDataProvider
       collapsibleState: element.isTool
         ? vscode.TreeItemCollapsibleState.None
         : vscode.TreeItemCollapsibleState.Collapsed,
+      iconPath: element.iconPath,
       command: element.isTool ? element.openCommand : undefined,
     };
   }

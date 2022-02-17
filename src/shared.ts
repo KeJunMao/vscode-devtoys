@@ -1,3 +1,5 @@
+import { ThemeIcon, Uri } from "vscode";
+
 export enum PanelType {
   null = 0,
   jsonToYaml = "jsonToYaml",
@@ -25,4 +27,9 @@ export interface IToolData {
   label: string;
   tooltip: string;
   panel: PanelType | Category;
+  iconPath?:
+    | string
+    | Uri
+    | { light: string | Uri; dark: string | Uri }
+    | ThemeIcon;
 }

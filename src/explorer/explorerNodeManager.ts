@@ -1,4 +1,4 @@
-import { Disposable } from "vscode";
+import { Disposable, ThemeIcon } from "vscode";
 import i18n from "../i18n";
 import { Category, IToolData, PanelType } from "../shared";
 import { DevToysNode } from "./DevToysNode";
@@ -104,6 +104,7 @@ class ExplorerNodeManager implements Disposable {
           label: i18n.t("view.devtoys.all.label"),
           tooltip: i18n.t("view.devtoys.all.tooltip"),
           panel: Category.all,
+          iconPath: new ThemeIcon("home"),
         },
         false
       ),
@@ -112,6 +113,7 @@ class ExplorerNodeManager implements Disposable {
           label: i18n.t("view.devtoys.convertors.label"),
           tooltip: i18n.t("view.devtoys.convertors.tooltip"),
           panel: Category.convertors,
+          iconPath: new ThemeIcon("symbol-boolean"),
         },
         false
       ),
@@ -120,6 +122,7 @@ class ExplorerNodeManager implements Disposable {
           label: i18n.t("view.devtoys.coders.label"),
           tooltip: i18n.t("view.devtoys.coders.tooltip"),
           panel: Category.coders,
+          iconPath: new ThemeIcon("combine"),
         },
         false
       ),
@@ -128,6 +131,7 @@ class ExplorerNodeManager implements Disposable {
           label: i18n.t("view.devtoys.generators.label"),
           tooltip: i18n.t("view.devtoys.generators.tooltip"),
           panel: Category.generators,
+          iconPath: new ThemeIcon("circuit-board"),
         },
         false
       ),
@@ -136,6 +140,7 @@ class ExplorerNodeManager implements Disposable {
           label: i18n.t("view.devtoys.text.label"),
           tooltip: i18n.t("view.devtoys.text.tooltip"),
           panel: Category.text,
+          iconPath: new ThemeIcon("symbol-parameter"),
         },
         false
       ),
@@ -144,6 +149,7 @@ class ExplorerNodeManager implements Disposable {
           label: i18n.t("view.devtoys.graphic.label"),
           tooltip: i18n.t("view.devtoys.graphic.tooltip"),
           panel: Category.graphic,
+          iconPath: new ThemeIcon("file-media"),
         },
         false
       ),
@@ -152,6 +158,7 @@ class ExplorerNodeManager implements Disposable {
           label: i18n.t("view.devtoys.others.label"),
           tooltip: i18n.t("view.devtoys.others.tooltip"),
           panel: Category.others,
+          iconPath: new ThemeIcon("tools"),
         },
         false
       ),
@@ -174,7 +181,7 @@ class ExplorerNodeManager implements Disposable {
     return this.explorerNodeMap.get(Category.text) || [];
   }
   public getGraphicNodes(): DevToysNode[] {
-    return this.explorerNodeMap.get(Category.generators) || [];
+    return this.explorerNodeMap.get(Category.graphic) || [];
   }
   public getOthersNodes(): DevToysNode[] {
     return this.explorerNodeMap.get(Category.others) || [];
