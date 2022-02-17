@@ -20,6 +20,8 @@
 
 To set up your environment to develop DevToys, run `yarn`.
 
+> Unlimited quality, quantity required, welcome contribution, use **React** or **Svelte**
+
 ### Add New Tool
 
 example add **JWT Encoder/Decoder** tool
@@ -41,7 +43,7 @@ example add **JWT Encoder/Decoder** tool
 ✨  Done in 15.52s.
 ```
 
-2. add `PanelType` in `src/common/IToolData.ts`
+2. add `PanelType` in `src/shared.ts`
 
 ```ts
 enum PanelType {
@@ -50,28 +52,24 @@ enum PanelType {
 }
 ```
 
-3. add tree item in `src/Tree`, JWT tool is in Coders category,so edit `src/Tree/Coders.ts`
+3. add tree item in `src/explorer/explorerNodeManager.ts`,JWT tool is in Coders category,so edit
 
 ```ts
-export class CodersProvider extends ToolGrpupProvider {
-  constructor() {
-    super([
-      ...,
-      {
-        label: i18n.t("view.devtoys.coders.jwt.label"),
-        tooltip: i18n.t("view.devtoys.coders.jwt.tooltip"),
-        panel: PanelType.jwt,
-      }
-    ]);
+ const coders: IToolData[] = [
+  ...,
+  {
+    label: i18n.t("view.devtoys.coders.jwt.label"),
+    tooltip: i18n.t("view.devtoys.coders.jwt.tooltip"),
+    panel: PanelType.jwt,
   }
-}
+]
 ```
 
 4. show tool in `src/extension.ts`
 
 ```ts
-vscode.commands.registerCommand("devtoys.showTool", (type: PanelType) => {
-  switch (type) {
+vscode.commands.registerCommand("devtoys.showTool", (node: DevToysNode) => {
+  switch (node.type) {
     ...
     case PanelType.jwt:
       jwt.createOrShow(context.extensionUri);

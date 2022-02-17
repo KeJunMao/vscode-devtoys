@@ -18,10 +18,7 @@
   ],
   "activationEvents": [
     "onCommand:devtoys.showTool",
-    "onView:github-kejun-devtoys",
-    "onView:github-kejun-devtoys-convertors",
-    "onView:github-kejun-devtoys-coders",
-    "onView:github-kejun-devtoys-generators"
+    "onView:github-kejun-devtoys"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -43,24 +40,8 @@
     "views": {
       "github-kejun-devtoys": [
         {
-          "id": "github-kejun-devtoys-convertors",
-          "name": "%view.devtoys.convertors%"
-        },
-        {
-          "id": "github-kejun-devtoys-coders",
-          "name": "%view.devtoys.coders%"
-        },
-        {
-          "id": "github-kejun-devtoys-generators",
-          "name": "%view.devtoys.generators%"
-        },
-        {
-          "id": "github-kejun-devtoys-text",
-          "name": "%view.devtoys.text%"
-        },
-        {
-          "id": "github-kejun-devtoys-graphic",
-          "name": "%view.devtoys.graphic%"
+          "id": "github-kejun-devtoys",
+          "name": "DevToys"
         }
       ]
     }

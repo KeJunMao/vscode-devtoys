@@ -1,4 +1,4 @@
-import { PanelType } from "../common/IToolData";
+import { PanelType } from "../shared";
 import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
 import i18n from "../i18n";

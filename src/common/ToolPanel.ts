@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { getNonce } from "../utils";
-import { PanelType } from "./IToolData";
+import { PanelType } from "../shared";
 
 export class ToolPanel<V> {
   static currentPanel: ToolPanel<unknown> | undefined;

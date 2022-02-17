@@ -1,4 +1,5 @@
-enum PanelType {
+export enum PanelType {
+  null = 0,
   jsonToYaml = "jsonToYaml",
   numberBase = "numberBase",
   base64 = "base64",
@@ -10,9 +11,18 @@ enum PanelType {
   colorBlindnessSimulator = "colorBlindnessSimulator",
 }
 
-export { PanelType };
+export enum Category {
+  all = "rootAll",
+  coders = "rootCoders",
+  convertors = "rootConvertors",
+  generators = "rootGenerators",
+  text = "rootText",
+  graphic = "rootGraphic",
+  others = "rootOthers",
+}
+
 export interface IToolData {
   label: string;
   tooltip: string;
-  panel: PanelType;
+  panel: PanelType | Category;
 }

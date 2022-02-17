@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/Cellar/node@14/14.18.2/bin/node /usr/local/bin/yarn add -D @types/regex-colorize
+  /usr/local/Cellar/node@14/14.18.2/bin/node /usr/local/bin/yarn run watch
 
 PATH: 
-  /Users/kejun/.deno/bin:/Users/kejun/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/kejun/.deno/bin:/Users/kejun/go/bin
+  /Users/kejun/.deno/bin:/Users/kejun/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
 
 Yarn version: 
   1.22.5
@@ -14,17 +14,12 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/@types%2fregex-colorize: [NOT_FOUND] @types/regex-colorize not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66988:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140662:22)
-      at Request.emit (events.js:400:28)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141634:10)
-      at Request.emit (events.js:400:28)
-      at Gunzip.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141556:12)
-      at Object.onceWrapper (events.js:519:28)
-      at Gunzip.emit (events.js:400:28)
-      at endReadableNT (internal/streams/readable.js:1334:12)
-      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+  SyntaxError: /Users/kejun/Workspace/devtoys/package.json: Unexpected token ] in JSON at position 976
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -32,7 +27,7 @@ npm manifest:
     "displayName": "DevToys",
     "icon": "media/icon.png",
     "description": "DevToys for VSCode",
-    "version": "0.0.8",
+    "version": "0.0.10",
     "publisher": "kejun",
     "license": "GPLv3",
     "engines": {
@@ -47,10 +42,7 @@ npm manifest:
     ],
     "activationEvents": [
       "onCommand:devtoys.showTool",
-      "onView:github-kejun-devtoys",
-      "onView:github-kejun-devtoys-convertors",
-      "onView:github-kejun-devtoys-coders",
-      "onView:github-kejun-devtoys-generators"
+      "onView:github-kejun-devtoys"
     ],
     "main": "./dist/extension.js",
     "contributes": {
@@ -72,25 +64,9 @@ npm manifest:
       "views": {
         "github-kejun-devtoys": [
           {
-            "id": "github-kejun-devtoys-convertors",
-            "name": "%view.devtoys.convertors%"
+            "id": "github-kejun-devtoys",
+            "name": "DevToys"
           },
-          {
-            "id": "github-kejun-devtoys-coders",
-            "name": "%view.devtoys.coders%"
-          },
-          {
-            "id": "github-kejun-devtoys-generators",
-            "name": "%view.devtoys.generators%"
-          },
-          {
-            "id": "github-kejun-devtoys-text",
-            "name": "%view.devtoys.text%"
-          },
-          {
-            "id": "github-kejun-devtoys-graphic",
-            "name": "%view.devtoys.graphic%"
-          }
         ]
       }
     },
@@ -109,12 +85,14 @@ npm manifest:
       "new": "plop"
     },
     "devDependencies": {
+      "@bjornlu/colorblind": "^1.0.3",
       "@rollup/plugin-commonjs": "^14.0.0",
       "@rollup/plugin-json": "^4.1.0",
       "@rollup/plugin-node-resolve": "^8.0.0",
       "@rollup/plugin-replace": "^3.1.0",
       "@rollup/plugin-typescript": "^6.0.0",
       "@tsconfig/svelte": "^1.0.0",
+      "@types/autosize": "^4.0.1",
       "@types/crypto-js": "^4.1.1",
       "@types/glob": "^7.2.0",
       "@types/he": "^1.1.2",
@@ -126,6 +104,7 @@ npm manifest:
       "@typescript-eslint/eslint-plugin": "^5.9.1",
       "@typescript-eslint/parser": "^5.9.1",
       "@vscode/test-electron": "^2.0.3",
+      "autosize": "^5.0.1",
       "concurrently": "^7.0.0",
       "crypto-js": "^4.1.1",
       "eslint": "^8.6.0",
@@ -200,6 +179,11 @@ Lockfile:
     integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
     dependencies:
       regenerator-runtime "^0.13.4"
+  
+  "@bjornlu/colorblind@^1.0.3":
+    version "1.0.3"
+    resolved "https://registry.npmmirror.com/@bjornlu/colorblind/-/colorblind-1.0.3.tgz#556289e01c3aa5c065bad98af6cfcfac17305c5f"
+    integrity sha512-RG9W0BuFib5xN19R4U1dFK7s26+UPiJqHdwqawpvH7sywXJ6zc37onPpRpnFP0aNuKLhhmuitqPAXxLxOA+HgQ==
   
   "@discoveryjs/json-ext@^0.5.0":
     version "0.5.6"
@@ -409,6 +393,11 @@ Lockfile:
     version "1.0.13"
     resolved "https://registry.npmmirror.com/@tsconfig/svelte/-/svelte-1.0.13.tgz#2fa34376627192c0d643ce54964915e2bd3a58e4"
     integrity sha512-5lYJP45Xllo4yE/RUBccBT32eBlRDbqN8r1/MIvQbKxW3aFqaYPCNgm8D5V20X4ShHcwvYWNlKg3liDh1MlBoA==
+  
+  "@types/autosize@^4.0.1":
+    version "4.0.1"
+    resolved "https://registry.npmmirror.com/@types/autosize/-/autosize-4.0.1.tgz#999a7c305b96766248044ebaac1a0299961f3b61"
+    integrity sha512-iPJT/FCaSO79G6j+9n6gmFc5nhxZ1gDrA2UAvb5FslJ6FJQZnDfbBU0qp5vpp0Cbjj7+gOyjuWZ7RrXvRuETaA==
   
   "@types/crypto-js@^4.1.1":
     version "4.1.1"
@@ -946,6 +935,11 @@ Lockfile:
     integrity sha512-O0yuUDnZeQDL+ncNGlJ78BiO4jnYI3bvMsD5prT0/nsgijG/LpNBIr63gTjVTNsiGkgQhiyCShTgxt8oXOrklA==
     dependencies:
       tslib "^2.0.1"
+  
+  autosize@^5.0.1:
+    version "5.0.1"
+    resolved "https://registry.npmmirror.com/autosize/-/autosize-5.0.1.tgz#ed269b0fa9b7eb47627048a1bb3299e99e003a0f"
+    integrity sha512-UIWUlE4TOVPNNj2jjrU39wI4hEYbneUypEqcyRmRFIx5CC2gNdg3rQr+Zh7/3h6egbBvm33TDQjNQKtj9Tk1HA==
   
   balanced-match@^1.0.0:
     version "1.0.2"
