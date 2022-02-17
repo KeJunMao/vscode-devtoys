@@ -2,10 +2,11 @@ const notEmpty = name => v =>
   !v || v.trim() === '' ? `${name} is required` : true;
 
 module.exports = function (plop) {
-  const sentenceCase = plop.getHelper('sentenceCase');
   const titleCase = plop.getHelper('titleCase');
   const lowerCase = plop.getHelper('lowerCase');
   const pascalCase = plop.getHelper('pascalCase');
+  const camelCase = plop.getHelper('camelCase');
+
   plop.setGenerator('tool', {
     description: 'this is a skeleton plopfile',
     prompts: [
@@ -70,7 +71,7 @@ module.exports = function (plop) {
         // PAGE
         {
           type: 'add',
-          path: `svelte-stuff/pages/{{sentenceCase label}}.${pageExt}`,
+          path: `svelte-stuff/pages/{{camelCase label}}.${pageExt}`,
           templateFile: `plop-template/svelte-stuff/page/${framework}/index.hbs`,
           data: {
             component: pascalCase(data.label),
@@ -88,11 +89,11 @@ module.exports = function (plop) {
         // PANEL
         {
           type: 'add',
-          path: 'src/Panel/{{pascalCase label}}.ts',
+          path: 'src/Panel/{{camelCase label}}.ts',
           templateFile: 'plop-template/panel/index.hbs',
           data: {
             className: pascalCase(data.label),
-            panelType: sentenceCase(data.label),
+            panelType: camelCase(data.label),
             category: lowerCase(data.category),
           }
         },
