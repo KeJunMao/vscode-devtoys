@@ -17,8 +17,15 @@ export class Html extends ToolPanel<Html> {
     );
   }
 
+  public static canBeTreatedByTool(data: string): boolean | PanelType {
+    let result = /<(\w+)[^>]*>(.*?<\/\1>)?/.test(data);
+    return result ? PanelType.html : false;
+  }
+
   public dispose(): void {
     super.dispose();
     Html.currentPanel = undefined;
   }
 }
+
+ToolPanel.allPanel.add(Html);

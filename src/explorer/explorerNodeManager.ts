@@ -187,6 +187,10 @@ class ExplorerNodeManager implements Disposable {
     return this.explorerNodeMap.get(Category.others) || [];
   }
 
+  public getNodeByPanel(panel: PanelType): DevToysNode | undefined {
+    return this.getAllNodes().find((node) => node.panel === panel);
+  }
+
   public dispose(): void {
     this.explorerNodeMap.clear();
   }

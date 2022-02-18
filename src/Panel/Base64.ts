@@ -17,8 +17,18 @@ export class Base64 extends ToolPanel<Base64> {
     );
   }
 
+  public static canBeTreatedByTool(data: string): boolean | PanelType {
+    const result =
+      /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$/.test(
+        data
+      );
+    return result ? PanelType.base64 : false;
+  }
+
   public dispose(): void {
     super.dispose();
     Base64.currentPanel = undefined;
   }
 }
+
+ToolPanel.allPanel.add(Base64);

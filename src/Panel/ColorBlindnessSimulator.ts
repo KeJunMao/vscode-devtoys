@@ -22,3 +22,5 @@ export class ColorBlindnessSimulator extends ToolPanel<ColorBlindnessSimulator> 
     ColorBlindnessSimulator.currentPanel = undefined;
   }
 }
+
+ToolPanel.allPanel.add(ColorBlindnessSimulator);

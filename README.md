@@ -65,17 +65,15 @@ enum PanelType {
 ]
 ```
 
-4. show tool in `src/extension.ts`
+4. show tool in `src/commands/showTool.ts`
 
 ```ts
-vscode.commands.registerCommand("devtoys.showTool", (node: DevToysNode) => {
-  switch (node.type) {
-    ...
-    case PanelType.jwt:
-      jwt.createOrShow(context.extensionUri);
-      break;
-  }
-})
+switch (node.type) {
+  ...
+  case PanelType.jwt:
+    jwt.createOrShow(context.extensionUri);
+    break;
+}
 ```
 
 5. Make JWT tool and I18N key, and then test the tool!

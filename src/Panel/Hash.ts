@@ -22,3 +22,5 @@ export class Hash extends ToolPanel<Hash> {
     Hash.currentPanel = undefined;
   }
 }
+
+ToolPanel.allPanel.add(Hash);

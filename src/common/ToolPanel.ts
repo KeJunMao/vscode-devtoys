@@ -4,6 +4,7 @@ import { PanelType } from "../shared";
 
 export class ToolPanel<V> {
   static currentPanel: ToolPanel<unknown> | undefined;
+  static allPanel: Set<any> = new Set();
 
   private readonly _panel: vscode.WebviewPanel;
   private readonly _extensionUri: vscode.Uri;
@@ -69,6 +70,10 @@ export class ToolPanel<V> {
         x.dispose();
       }
     }
+  }
+
+  public static canBeTreatedByTool(data: string): boolean | PanelType {
+    return false;
   }
 
   private async _update() {

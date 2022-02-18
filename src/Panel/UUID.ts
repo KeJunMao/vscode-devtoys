@@ -22,3 +22,5 @@ export class UUID extends ToolPanel<UUID> {
     UUID.currentPanel = undefined;
   }
 }
+
+ToolPanel.allPanel.add(UUID);

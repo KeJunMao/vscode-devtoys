@@ -95,6 +95,7 @@ module.exports = function (plop) {
             className: pascalCase(data.label),
             panelType: camelCase(data.label),
             category: lowerCase(data.category),
+            framework,
           }
         },
         // COMPONENT I18N

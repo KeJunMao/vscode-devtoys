@@ -33,6 +33,12 @@
         "title": "%command.devtoys.searchTool.title%",
         "category": "DevToys",
         "icon": "$(search)"
+      },
+      {
+        "command": "devtoys.automatically",
+        "title": "%command.devtoys.automatically.title%",
+        "category": "DevToys",
+        "icon": "$(wand)"
       }
     ],
     "viewsContainers": {
@@ -58,6 +64,11 @@
           "command": "devtoys.searchTool",
           "when": "view == github-kejun-devtoys",
           "group": "navigation@0"
+        },
+        {
+          "command": "devtoys.automatically",
+          "when": "view == github-kejun-devtoys",
+          "group": "navigation@1"
         }
       ]
     }

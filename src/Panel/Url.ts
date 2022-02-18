@@ -17,8 +17,18 @@ export class Url extends ToolPanel<Url> {
     );
   }
 
+  public static canBeTreatedByTool(data: string): boolean | PanelType {
+    const result =
+      /^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/.test(
+        data
+      );
+    return result ? PanelType.url : false;
+  }
+
   public dispose(): void {
     super.dispose();
     Url.currentPanel = undefined;
   }
 }
+
+ToolPanel.allPanel.add(Url);

@@ -16,9 +16,14 @@ export class RegexTester extends ToolPanel<RegexTester> {
       RegexTester
     );
   }
-
+  public static canBeTreatedByTool(data: string): boolean | PanelType {
+    let result = /^\/.*\/[gimsuy]*$/.test(data);
+    return result ? PanelType.regexTester : false;
+  }
   public dispose(): void {
     super.dispose();
     RegexTester.currentPanel = undefined;
   }
 }
+
+ToolPanel.allPanel.add(RegexTester);

@@ -1,4 +1,6 @@
 {
+  "command.devtoys.automatically.nothing.informationMessage": "魔棒暂时找不到合适的工具",
+  "command.devtoys.automatically.title": "魔棒",
   "command.devtoys.searchTool.placeHolder": "请选择工具",
   "command.devtoys.searchTool.title": "搜索工具",
   "command.devtoys.showTool.title": "打开工具",
