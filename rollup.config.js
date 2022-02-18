@@ -2,9 +2,10 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
-import { terser } from "rollup-plugin-terser";
+// import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
-import typescript from "@rollup/plugin-typescript";
+// import typescript from "@rollup/plugin-typescript";
+import esbuild from 'rollup-plugin-esbuild';
 import path from "path";
 import fs from "fs";
 import postcss from 'rollup-plugin-postcss';
@@ -12,68 +13,101 @@ import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
 
-export default fs
+const pageTask = fs
   .readdirSync(path.join(__dirname, "svelte-stuff", "pages"))
   .map((input) => {
     const name = input.split(".")[0];
     return {
       input: "svelte-stuff/pages/" + input,
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'i18next', 'react-i18next', '@vscode/webview-ui-toolkit', '@vscode/webview-ui-toolkit/react', 'svelte-i18n'],
       output: {
-        sourcemap: true,
+        sourcemap: !production,
         format: "iife",
         name: "app",
         file: "out/compiled/" + name + ".js",
         inlineDynamicImports: true,
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'i18next': 'i18n',
+          'react-i18next': 'reactI18next',
+          '@vscode/webview-ui-toolkit': 'webviewUiToolkit',
+          '@vscode/webview-ui-toolkit/react': 'reactWebviewUiToolkit',
+          'svelte-i18n': 'svelteI18n'
+        }
       },
       plugins: [
+        esbuild({
+          tsconfig: "svelte-stuff/tsconfig.json",
+          sourceMap: !production,
+        }),
         replace({
           // eslint-disable-next-line @typescript-eslint/naming-convention
           "process.env.NODE_ENV": production ? JSON.stringify('production') : JSON.stringify('development'),
+          preventAssignment: true,
         }),
         svelte({
-          // enable run-time checks when not in production
           dev: !production,
-          // we'll extract any component CSS out into
-          // a separate file - better for performance
           css: (css) => {
             css.write(name + ".css");
           },
           preprocess: sveltePreprocess(),
         }),
         json(),
-
-        // If you have external dependencies installed from
-        // npm, you'll most likely need these plugins. In
-        // some cases you'll need additional configuration -
-        // consult the documentation for details:
-        // https://github.com/rollup/plugins/tree/master/packages/commonjs
         postcss(),
         commonjs(),
         resolve({
           browser: true,
           dedupe: ["svelte"],
         }),
-        typescript({
-          tsconfig: "svelte-stuff/tsconfig.json",
-          sourceMap: !production,
-          inlineSources: !production,
-        }),
-
-        // In dev mode, call `npm run start` once
-        // the bundle has been generated
-        // !production && serve(),
-
-        // Watch the `public` directory and refresh the
-        // browser on changes when not in production
-        // !production && livereload("public"),
-
-        // If we're building for production (npm run build
-        // instead of npm run dev), minify
-        production && terser(),
       ],
       watch: {
         clearScreen: false,
       },
     };
   });
+
+const venderTask = [
+  // react
+  {
+    input: "svelte-stuff/vender/react.ts",
+    output: {
+      sourcemap: true,
+      file: "out/vender/react.js",
+      format: "iife",
+      name: "react",
+    },
+    plugins: [
+      esbuild({
+        tsconfig: "svelte-stuff/tsconfig.json",
+        sourceMap: !production,
+        optimizeDeps: {
+          include: ['react', 'react-dom', 'i18next', 'react-i18next', '@vscode/webview-ui-toolkit', '@vscode/webview-ui-toolkit/react'],
+        },
+        minify: true
+      }),
+    ]
+  },
+  // svelte
+  {
+    input: "svelte-stuff/vender/svelte.ts",
+    output: {
+      sourcemap: true,
+      file: "out/vender/svelte.js",
+      format: "iife",
+      name: "svelte",
+    },
+    plugins: [
+      esbuild({
+        tsconfig: "svelte-stuff/tsconfig.json",
+        sourceMap: !production,
+        optimizeDeps: {
+          include: ['svelte-i18n', '@vscode/webview-ui-toolkit'],
+        },
+        minify: true
+      }),
+    ]
+  }
+];
+
+export default [...venderTask, ...pageTask];

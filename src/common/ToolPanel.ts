@@ -9,6 +9,7 @@ export class ToolPanel<V> {
   private readonly _extensionUri: vscode.Uri;
   private _disposables: vscode.Disposable[] = [];
   private _type: PanelType;
+  private _webFramework: string;
 
   public static createOrShow<T extends ToolPanel<unknown>>(
     extensionUri: vscode.Uri,
@@ -37,6 +38,7 @@ export class ToolPanel<V> {
         localResourceRoots: [
           vscode.Uri.joinPath(extensionUri, "media"),
           vscode.Uri.joinPath(extensionUri, "out/compiled"),
+          vscode.Uri.joinPath(extensionUri, "out/vender"),
         ],
       }
     );
@@ -47,11 +49,13 @@ export class ToolPanel<V> {
   constructor(
     panel: vscode.WebviewPanel,
     extensionUri: vscode.Uri,
-    type: PanelType
+    type: PanelType,
+    webFramework: string = "react"
   ) {
     this._panel = panel;
     this._extensionUri = extensionUri;
     this._type = type;
+    this._webFramework = webFramework;
     this._update();
     this._panel.onDidDispose(() => this.dispose(), null, this._disposables);
   }
@@ -93,7 +97,11 @@ export class ToolPanel<V> {
 
   private _getHtmlForWebview(webview: vscode.Webview) {
     const venderUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, "media", `vender.js`)
+      vscode.Uri.joinPath(
+        this._extensionUri,
+        "out",
+        `vender/${this._webFramework}.js`
+      )
     );
     const scriptUri = webview.asWebviewUri(
       vscode.Uri.joinPath(

@@ -5,7 +5,7 @@ import i18n from "../i18n";
 
 export class JsonToYaml extends ToolPanel<JsonToYaml> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
-    super(panel, extensionUri, PanelType.jsonToYaml);
+    super(panel, extensionUri, PanelType.jsonToYaml, "svelte");
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {

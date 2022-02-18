@@ -5,7 +5,7 @@ import i18n from "../i18n";
 
 export class NumberBase extends ToolPanel<NumberBase> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
-    super(panel, extensionUri, PanelType.numberBase);
+    super(panel, extensionUri, PanelType.numberBase, "svelte");
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {

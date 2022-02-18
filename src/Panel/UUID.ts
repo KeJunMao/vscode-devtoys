@@ -5,7 +5,7 @@ import i18n from "../i18n";
 
 export class UUID extends ToolPanel<UUID> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
-    super(panel, extensionUri, PanelType.uuid);
+    super(panel, extensionUri, PanelType.uuid, "svelte");
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {

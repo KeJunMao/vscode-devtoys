@@ -5,7 +5,7 @@ import i18n from "../i18n";
 
 export class Html extends ToolPanel<Html> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
-    super(panel, extensionUri, PanelType.html);
+    super(panel, extensionUri, PanelType.html, "svelte");
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {
