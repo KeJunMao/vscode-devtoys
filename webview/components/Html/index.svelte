@@ -1,6 +1,7 @@
 <script lang="ts">
+  // import {encode,decode} from './he.js';
+  import { encode, decode } from "./he";
   import { _ } from "svelte-i18n";
-  import he from "he";
 
   import {
     vsCodeTextArea,
@@ -17,7 +18,7 @@
   let coder = "";
 
   function updateCoderText() {
-    coder = he.encode(source, {
+    coder = encode(source, {
       useNamedReferences,
       decimal,
       encodeEverything,
@@ -55,7 +56,7 @@
   value={source}
   on:input={({ target }) => {
     source = target.value;
-    coder = he.encode(source, {
+    coder = encode(source, {
       useNamedReferences,
       decimal,
       encodeEverything,
@@ -72,7 +73,7 @@
   value={coder}
   on:input={({ target }) => {
     coder = target.value;
-    source = he.decode(target.value);
+    source = decode(target.value);
   }}
   style="width: 100%;"
   resize="none"

@@ -26,6 +26,11 @@ class ExplorerNodeManager implements Disposable {
         tooltip: i18n.t("view.devtoys.coders.url.tooltip"),
         panel: PanelType.url,
       },
+      {
+        label: i18n.t("view.devtoys.coders.jwt.label"),
+        tooltip: i18n.t("view.devtoys.coders.jwt.tooltip"),
+        panel: PanelType.jwt,
+      },
     ];
     const convertors: IToolData[] = [
       {

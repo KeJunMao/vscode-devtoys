@@ -1,0 +1,9 @@
+{
+  "tool.jwt.headerTextArea.label": "Header",
+  "tool.jwt.payloadTextArea.label": "Payload",
+  "tool.jwt.privateKeyTextArea.label": "私钥",
+  "tool.jwt.publicKeyTextArea.label": "公钥",
+  "tool.jwt.secretTextField.label": "Secret",
+  "tool.jwt.title": "JWT 调试器",
+  "tool.jwt.tokenTextArea.label": "JWT"
+}

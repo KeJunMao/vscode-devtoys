@@ -34,12 +34,12 @@ example add **JWT Encoder/Decoder** tool
 ? Tool panel title JWT Encoder/Decoder
 ? Tool category Encoder/Decoder
 ? Tool webview framework React
-✔  ++ /svelte-stuff/pages/Jwt.tsx
-✔  ++ /svelte-stuff/components/Jwt/index.tsx
+✔  ++ /webview/pages/Jwt.tsx
+✔  ++ /webview/components/Jwt/index.tsx
 ✔  ++ /src/Panel/Jwt.ts
-✔  ++ /svelte-stuff/components/Jwt/locales/en.json
-✔  ++ /svelte-stuff/components/Jwt/locales/zh-CN.json
-✔  ++ /svelte-stuff/components/Jwt/i18n.ts
+✔  ++ /webview/components/Jwt/locales/en.json
+✔  ++ /webview/components/Jwt/locales/zh-CN.json
+✔  ++ /webview/components/Jwt/i18n.ts
 ✨  Done in 15.52s.
 ```
 
@@ -78,4 +78,4 @@ switch (node.type) {
 
 5. Make JWT tool and I18N key, and then test the tool!
 
-> NOTE: webview i18n file in `svelte-stuff/components/TOOLNAME/locales`, extension i18n file in `locales`
+> NOTE: webview i18n file in `webview/components/TOOLNAME/locales`, extension i18n file in `locales`

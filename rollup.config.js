@@ -1,26 +1,43 @@
 import svelte from "rollup-plugin-svelte";
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
-// import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
-// import typescript from "@rollup/plugin-typescript";
 import esbuild from 'rollup-plugin-esbuild';
 import path from "path";
 import fs from "fs";
 import postcss from 'rollup-plugin-postcss';
 import replace from '@rollup/plugin-replace';
+import vue from '@vitejs/plugin-vue';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import builtins from 'rollup-plugin-node-builtins';
+import globals from 'rollup-plugin-node-globals';
 
 const production = !process.env.ROLLUP_WATCH;
 
+const globalVender = ['@vscode/webview-ui-toolkit'];
+
+const reactVender = ['react', 'react-dom', 'i18next', 'react-i18next', '@vscode/webview-ui-toolkit/react'];
+const svelteVender = ['svelte-i18n'];
+const vueVender = ['vue', 'vue-i18n'];
+
 const pageTask = fs
-  .readdirSync(path.join(__dirname, "svelte-stuff", "pages"))
+  .readdirSync(path.join(__dirname, "webview", "pages"))
   .map((input) => {
     const name = input.split(".")[0];
+    const plugins = name === 'jwt' ? [
+      globals(),
+      builtins({ crypto: false }),
+    ] : [];
+
     return {
-      input: "svelte-stuff/pages/" + input,
-      external: ['react', 'react-dom', 'i18next', 'react-i18next', '@vscode/webview-ui-toolkit', '@vscode/webview-ui-toolkit/react', 'svelte-i18n'],
+      input: "webview/pages/" + input,
+      external: [...globalVender, ...reactVender, svelteVender, vueVender],
+      context: 'window',
+      moduleContext: {
+        'window': "'window'"
+      },
       output: {
+        banner: 'window.module = {};',
         sourcemap: !production,
         format: "iife",
         name: "app",
@@ -33,14 +50,17 @@ const pageTask = fs
           'react-i18next': 'reactI18next',
           '@vscode/webview-ui-toolkit': 'webviewUiToolkit',
           '@vscode/webview-ui-toolkit/react': 'reactWebviewUiToolkit',
-          'svelte-i18n': 'svelteI18n'
+          'svelte-i18n': 'svelteI18n',
+          'vue': 'Vue',
+          'vue-i18n': 'VueI18n',
         }
       },
       plugins: [
         esbuild({
-          tsconfig: "svelte-stuff/tsconfig.json",
+          tsconfig: "webview/tsconfig.json",
           sourceMap: !production,
         }),
+        ...plugins,
         replace({
           // eslint-disable-next-line @typescript-eslint/naming-convention
           "process.env.NODE_ENV": production ? JSON.stringify('production') : JSON.stringify('development'),
@@ -53,12 +73,25 @@ const pageTask = fs
           },
           preprocess: sveltePreprocess(),
         }),
+        vue({
+          template: {
+            compilerOptions: {
+              // treat all tags with a dash as custom elements
+              isCustomElement: (tag) => tag.includes('vscode-')
+            }
+          }
+        }),
         json(),
         postcss(),
-        commonjs(),
-        resolve({
+        commonjs({
+          include: 'node_modules/**',
+          esmExternals: true,
+          transformMixedEsModules: true,
+        }),
+        nodeResolve({
           browser: true,
-          dedupe: ["svelte"],
+          preferBuiltins: true,
+          dedupe: ['svelte'],
         }),
       ],
       watch: {
@@ -70,7 +103,7 @@ const pageTask = fs
 const venderTask = [
   // react
   {
-    input: "svelte-stuff/vender/react.ts",
+    input: "webview/vender/react.ts",
     output: {
       sourcemap: true,
       file: "out/vender/react.js",
@@ -79,10 +112,10 @@ const venderTask = [
     },
     plugins: [
       esbuild({
-        tsconfig: "svelte-stuff/tsconfig.json",
+        tsconfig: "webview/tsconfig.json",
         sourceMap: !production,
         optimizeDeps: {
-          include: ['react', 'react-dom', 'i18next', 'react-i18next', '@vscode/webview-ui-toolkit', '@vscode/webview-ui-toolkit/react'],
+          include: [...globalVender, ...reactVender],
         },
         minify: true
       }),
@@ -90,7 +123,7 @@ const venderTask = [
   },
   // svelte
   {
-    input: "svelte-stuff/vender/svelte.ts",
+    input: "webview/vender/svelte.ts",
     output: {
       sourcemap: true,
       file: "out/vender/svelte.js",
@@ -99,10 +132,30 @@ const venderTask = [
     },
     plugins: [
       esbuild({
-        tsconfig: "svelte-stuff/tsconfig.json",
+        tsconfig: "webview/tsconfig.json",
         sourceMap: !production,
         optimizeDeps: {
-          include: ['svelte-i18n', '@vscode/webview-ui-toolkit'],
+          include: [...svelteVender, ...globalVender],
+        },
+        minify: true
+      }),
+    ]
+  },
+  // vue
+  {
+    input: "webview/vender/vue.ts",
+    output: {
+      sourcemap: true,
+      file: "out/vender/vue.js",
+      format: "iife",
+      name: "vue",
+    },
+    plugins: [
+      esbuild({
+        tsconfig: "webview/tsconfig.json",
+        sourceMap: !production,
+        optimizeDeps: {
+          include: [...vueVender, ...globalVender],
         },
         minify: true
       }),
@@ -110,4 +163,7 @@ const venderTask = [
   }
 ];
 
-export default [...venderTask, ...pageTask];
+export default [
+  // ...venderTask,
+  ...pageTask
+];

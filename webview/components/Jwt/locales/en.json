@@ -1,0 +1,9 @@
+{
+  "tool.jwt.headerTextArea.label": "Header",
+  "tool.jwt.payloadTextArea.label": "Payload",
+  "tool.jwt.privateKeyTextArea.label": "PrivateKey",
+  "tool.jwt.publicKeyTextArea.label": "PublicKey",
+  "tool.jwt.secretTextField.label": "Secret",
+  "tool.jwt.title": "JWT Debugger",
+  "tool.jwt.tokenTextArea.label": "Encoded"
+}

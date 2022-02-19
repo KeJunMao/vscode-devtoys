@@ -10,6 +10,7 @@ import { Url } from "../Panel/Url";
 import { UUID } from "../Panel/UUID";
 import { PanelType } from "../shared";
 import * as vscode from "vscode";
+import { Jwt } from "../Panel/Jwt";
 
 export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
   if (!node) {
@@ -42,6 +43,9 @@ export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
       break;
     case PanelType.colorBlindnessSimulator:
       ColorBlindnessSimulator.createOrShow(context.extensionUri);
+      break;
+    case PanelType.jwt:
+      Jwt.createOrShow(context.extensionUri);
       break;
   }
 };

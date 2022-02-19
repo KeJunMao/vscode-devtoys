@@ -3,24 +3,24 @@ import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
 import i18n from "../i18n";
 
-export class {{className}} extends ToolPanel<{{className}}> {
+export class Jwt extends ToolPanel<Jwt> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
-    super(panel, extensionUri, PanelType.{{panelType}}, "{{lowerCase framework}}");
+    super(panel, extensionUri, PanelType.jwt, "vue");
   }
 
   public static createOrShow(extensionUri: vscode.Uri) {
     super.createOrShow(
       extensionUri,
-      PanelType.{{panelType}},
-      i18n.t("view.devtoys.{{category}}.{{panelType}}.panel.title"),
-      {{className}}
+      PanelType.base64,
+      i18n.t("view.devtoys.coders.jwt.panel.title"),
+      Jwt
     );
   }
 
   public dispose(): void {
     super.dispose();
-    {{className}}.currentPanel = undefined;
+    Jwt.currentPanel = undefined;
   }
 }
 
-ToolPanel.allPanel.add({{className}});
+ToolPanel.allPanel.add(Jwt);
