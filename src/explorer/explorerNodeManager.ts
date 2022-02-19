@@ -26,6 +26,11 @@ class ExplorerNodeManager implements Disposable {
         tooltip: i18n.t("view.devtoys.coders.url.tooltip"),
         panel: PanelType.url,
       },
+      {
+        label: "JWT",
+        tooltip: "Encode JWT or decode JWT",
+        panel: PanelType.jwt,
+      },
     ];
     const convertors: IToolData[] = [
       {

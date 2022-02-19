@@ -6,7 +6,7 @@ import {
   VSCodeOption,
 } from "@vscode/webview-ui-toolkit/react";
 import React from "react";
-import CryptoJS from "crypto-js";
+import Crypto from "crypto-js";
 
 export default () => {
   const { t } = useTranslation();
@@ -47,39 +47,39 @@ export default () => {
   const [onUpdate, setOnUpdate] = React.useState(false);
   const methods = {
     MD5() {
-      return CryptoJS.MD5(content).toString();
+      return Crypto.MD5(content).toString();
     },
     HmacMD5() {
-      return CryptoJS.HmacMD5(content, key).toString();
+      return Crypto.HmacMD5(content, key).toString();
     },
     SHA1() {
-      return CryptoJS.SHA1(content).toString();
+      return Crypto.SHA1(content).toString();
     },
     HmacSHA1() {
-      return CryptoJS.HmacSHA1(content, key).toString();
+      return Crypto.HmacSHA1(content, key).toString();
     },
     SHA256() {
-      return CryptoJS.SHA256(content).toString();
+      return Crypto.SHA256(content).toString();
     },
     HmacSHA256() {
-      return CryptoJS.HmacSHA256(content, key).toString();
+      return Crypto.HmacSHA256(content, key).toString();
     },
     SHA3() {
-      return CryptoJS.SHA3(content).toString();
+      return Crypto.SHA3(content).toString();
     },
     HmacSHA512() {
-      return CryptoJS.HmacSHA512(content, key).toString();
+      return Crypto.HmacSHA512(content, key).toString();
     },
     RIPEMD160() {
-      return CryptoJS.RIPEMD160(content).toString();
+      return Crypto.RIPEMD160(content).toString();
     },
     AES() {
       try {
         /// @ts-ignore
-        return CryptoJS.AES[type](
+        return Crypto.AES[type](
           type === "encrypt" ? content : result,
           key
-        ).toString(type === "encrypt" ? undefined : CryptoJS.enc.Utf8);
+        ).toString(type === "encrypt" ? undefined : Crypto.enc.Utf8);
       } catch (error) {
         return false;
       }
@@ -87,10 +87,10 @@ export default () => {
     DES() {
       try {
         /// @ts-ignore
-        return CryptoJS.DES[type](
+        return Crypto.DES[type](
           type === "encrypt" ? content : result,
           key
-        ).toString(type === "encrypt" ? undefined : CryptoJS.enc.Utf8);
+        ).toString(type === "encrypt" ? undefined : Crypto.enc.Utf8);
       } catch (error) {
         return false;
       }
@@ -98,10 +98,10 @@ export default () => {
     TripleDES() {
       try {
         /// @ts-ignore
-        return CryptoJS.TripleDES[type](
+        return Crypto.TripleDES[type](
           type === "encrypt" ? content : result,
           key
-        ).toString(type === "encrypt" ? undefined : CryptoJS.enc.Utf8);
+        ).toString(type === "encrypt" ? undefined : Crypto.enc.Utf8);
       } catch (error) {
         return false;
       }
@@ -109,10 +109,10 @@ export default () => {
     Rabbit() {
       try {
         /// @ts-ignore
-        return CryptoJS.Rabbit[type](
+        return Crypto.Rabbit[type](
           type === "encrypt" ? content : result,
           key
-        ).toString(type === "encrypt" ? undefined : CryptoJS.enc.Utf8);
+        ).toString(type === "encrypt" ? undefined : Crypto.enc.Utf8);
       } catch (error) {
         return false;
       }
@@ -120,10 +120,10 @@ export default () => {
     RC4() {
       try {
         /// @ts-ignore
-        return CryptoJS.RC4[type](
+        return Crypto.RC4[type](
           type === "encrypt" ? content : result,
           key
-        ).toString(type === "encrypt" ? undefined : CryptoJS.enc.Utf8);
+        ).toString(type === "encrypt" ? undefined : Crypto.enc.Utf8);
       } catch (error) {
         return false;
       }
@@ -131,9 +131,9 @@ export default () => {
     RC4Drop() {
       try {
         /// @ts-ignore
-        return CryptoJS.RC4Drop[type](content, key, {
+        return Crypto.RC4Drop[type](content, key, {
           drop: drop,
-        }).toString(type === "encrypt" ? undefined : CryptoJS.enc.Utf8);
+        }).toString(type === "encrypt" ? undefined : Crypto.enc.Utf8);
       } catch (error) {
         return false;
       }

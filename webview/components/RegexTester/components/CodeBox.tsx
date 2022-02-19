@@ -8,7 +8,7 @@ import {
 } from "@vscode/webview-ui-toolkit/react/index";
 import { useTranslation } from "react-i18next";
 
-let rgx = new RegexColorize.default();
+let rgx = new RegexColorize();
 rgx.colorizeAll();
 
 export default ({

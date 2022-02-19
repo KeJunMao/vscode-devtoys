@@ -71,8 +71,8 @@ module.exports = function (plop) {
         // PAGE
         {
           type: 'add',
-          path: `svelte-stuff/pages/{{camelCase label}}.${pageExt}`,
-          templateFile: `plop-template/svelte-stuff/page/${framework}/index.hbs`,
+          path: `webview/pages/{{camelCase label}}.${pageExt}`,
+          templateFile: `plop-template/webview/page/${framework}/index.hbs`,
           data: {
             component: pascalCase(data.label),
           }
@@ -80,8 +80,8 @@ module.exports = function (plop) {
         // COMPONENT
         {
           type: 'add',
-          path: `svelte-stuff/components/{{pascalCase label}}/index.${componentExt}`,
-          templateFile: `plop-template/svelte-stuff/component/${framework}/index.hbs`,
+          path: `webview/components/{{pascalCase label}}/index.${componentExt}`,
+          templateFile: `plop-template/webview/component/${framework}/index.hbs`,
           data: {
             title: titleCase(data.title),
           }
@@ -101,18 +101,18 @@ module.exports = function (plop) {
         // COMPONENT I18N
         {
           type: 'add',
-          path: 'svelte-stuff/components/{{pascalCase label}}/locales/en.json',
-          templateFile: 'plop-template/svelte-stuff/component/i18n/en.json',
+          path: 'webview/components/{{pascalCase label}}/locales/en.json',
+          templateFile: 'plop-template/webview/component/i18n/en.json',
         },
         {
           type: 'add',
-          path: 'svelte-stuff/components/{{pascalCase label}}/locales/zh-CN.json',
-          templateFile: 'plop-template/svelte-stuff/component/i18n/zh-CN.json',
+          path: 'webview/components/{{pascalCase label}}/locales/zh-CN.json',
+          templateFile: 'plop-template/webview/component/i18n/zh-CN.json',
         },
         {
           type: 'add',
-          path: 'svelte-stuff/components/{{pascalCase label}}/i18n.ts',
-          templateFile: `plop-template/svelte-stuff/component/${framework}/i18n.hbs`,
+          path: 'webview/components/{{pascalCase label}}/i18n.ts',
+          templateFile: `plop-template/webview/component/${framework}/i18n.hbs`,
         },
         // // TODO: TREE src/Tree
         // {

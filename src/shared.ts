@@ -11,6 +11,7 @@ export enum PanelType {
   hash = "hash",
   regexTester = "regexTester",
   colorBlindnessSimulator = "colorBlindnessSimulator",
+  jwt = "jwt",
 }
 
 export enum Category {

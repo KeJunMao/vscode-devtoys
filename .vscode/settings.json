@@ -12,7 +12,7 @@
   "typescript.tsc.autoDetect": "off",
   "i18n-ally.localesPaths": [
     "./locales",
-    "./svelte-stuff/components/**/locales"
+    "./webview/components/**/locales"
   ],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.keystyle": "flat",
@@ -26,6 +26,7 @@
     "vscode",
     "svelte",
     "react",
+    "vue-sfc",
     "general"
   ],
 }

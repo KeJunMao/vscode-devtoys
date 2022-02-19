@@ -3,6 +3,7 @@
 node_modules/**
 out/**/*.map
 src/**
+webview/**
 .gitignore
 .yarnrc
 webpack.config.js

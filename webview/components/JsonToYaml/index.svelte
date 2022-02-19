@@ -1,6 +1,6 @@
 <script lang="ts">
   /// @ts-ignore
-  import * as YAML from "yaml/browser/dist/index";
+  import * as YAML from "yaml";
   import { _ } from "svelte-i18n";
   import {
     vsCodeTextArea,
