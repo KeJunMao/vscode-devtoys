@@ -26,7 +26,7 @@
     "vscode",
     "svelte",
     "react",
-    "vue-sfc",
+    "vue",
     "general"
   ],
 }

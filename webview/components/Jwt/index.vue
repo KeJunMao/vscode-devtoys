@@ -212,7 +212,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>JWT Encoder/Decoder</h1>
+  <h1>{{ $t("tool.jwt.title") }}</h1>
   <div class="algorithm-dropdown">
     Algorithm:&nbsp;
     <vscode-dropdown
@@ -243,8 +243,9 @@ onMounted(() => {
         "
         cols="30"
         rows="24"
-        >Encoded</vscode-text-area
       >
+        {{ $t("tool.jwt.tokenTextArea.label") }}
+      </vscode-text-area>
     </div>
     <div class="editor-decoded">
       <vscode-text-area
@@ -259,7 +260,7 @@ onMounted(() => {
         "
         cols="30"
         rows="5"
-        >Header</vscode-text-area
+        >{{ $t("tool.jwt.headerTextArea.label") }}</vscode-text-area
       >
       <vscode-text-area
         style="width: 100%"
@@ -273,7 +274,7 @@ onMounted(() => {
         "
         cols="30"
         rows="7"
-        >Payload</vscode-text-area
+        >{{ $t("tool.jwt.payloadTextArea.label") }}</vscode-text-area
       >
       <vscode-text-field
         style="width: 100%"
@@ -287,7 +288,7 @@ onMounted(() => {
           }
         "
       >
-        Secret
+        {{ $t("tool.jwt.secretTextField.label") }}
       </vscode-text-field>
 
       <div v-else>
@@ -301,7 +302,7 @@ onMounted(() => {
               encodeToken();
             }
           "
-          >PublicKey</vscode-text-area
+          >{{ $t("tool.jwt.publicKeyTextArea.label") }}</vscode-text-area
         >
         <vscode-text-area
           style="width: 100%"
@@ -313,7 +314,7 @@ onMounted(() => {
               encodeToken();
             }
           "
-          >PrivateKey</vscode-text-area
+          >{{ $t("tool.jwt.privateKeyTextArea.label") }}</vscode-text-area
         >
       </div>
     </div>

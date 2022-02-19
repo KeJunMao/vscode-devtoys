@@ -12,7 +12,7 @@ export class Jwt extends ToolPanel<Jwt> {
     super.createOrShow(
       extensionUri,
       PanelType.base64,
-      "JWT Encoder/Decoder",
+      i18n.t("view.devtoys.coders.jwt.panel.title"),
       Jwt
     );
   }
