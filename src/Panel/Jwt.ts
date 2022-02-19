@@ -17,6 +17,13 @@ export class Jwt extends ToolPanel<Jwt> {
     );
   }
 
+  public static canBeTreatedByTool(data: string): boolean | PanelType {
+    let result = /(^[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*$)/.test(
+      data
+    );
+    return result ? PanelType.jwt : false;
+  }
+
   public dispose(): void {
     super.dispose();
     Jwt.currentPanel = undefined;

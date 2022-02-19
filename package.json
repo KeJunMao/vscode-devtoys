@@ -3,7 +3,7 @@
   "displayName": "DevToys",
   "icon": "media/icon.png",
   "description": "DevToys for VSCode",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "publisher": "kejun",
   "license": "GPLv3",
   "engines": {

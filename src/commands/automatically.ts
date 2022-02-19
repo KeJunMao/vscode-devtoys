@@ -42,10 +42,17 @@ export default (context: vscode.ExtensionContext) => async () => {
       })
       .filter((node) => node !== undefined);
     // jsonToYaml 太容易匹配了，所以如果匹配到了，就把 jsonToYaml 删了
-    nodes.splice(
-      nodes.indexOf(nodes.find((node) => node?.panel === PanelType.jsonToYaml)),
-      1
+    const jsonToYamlNode = nodes.find(
+      (node) => node?.panel === PanelType.jsonToYaml
     );
+    if (nodes.includes(jsonToYamlNode)) {
+      nodes.splice(
+        nodes.indexOf(
+          nodes.find((node) => node?.panel === PanelType.jsonToYaml)
+        ),
+        1
+      );
+    }
 
     if (nodes.length === 1) {
       showTool(context)(nodes[0]);
