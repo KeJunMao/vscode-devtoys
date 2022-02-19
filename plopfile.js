@@ -59,14 +59,29 @@ module.exports = function (plop) {
         choices: [
           'React',
           'Svelte',
+          'Vue',
         ],
         default: "React"
       }
     ],
     actions(data) {
       const framework = lowerCase(data.framework);
-      const pageExt = framework === 'react' ? 'tsx' : 'ts';
-      const componentExt = framework === 'react' ? 'tsx' : 'svelte';
+      let pageExt = 'ts';
+      let componentExt = 'tsx';
+      switch (framework) {
+        case 'react':
+          pageExt = 'tsx';
+          componentExt = 'tsx';
+          break;
+        case 'svelte':
+          pageExt = 'ts';
+          componentExt = 'svelte';
+          break;
+        case 'vue':
+          pageExt = 'ts';
+          componentExt = 'vue';
+          break;
+      }
       const actions = [
         // PAGE
         {
@@ -89,7 +104,7 @@ module.exports = function (plop) {
         // PANEL
         {
           type: 'add',
-          path: 'src/Panel/{{camelCase label}}.ts',
+          path: 'src/Panel/{{pascalCase label}}.ts',
           templateFile: 'plop-template/panel/index.hbs',
           data: {
             className: pascalCase(data.label),
