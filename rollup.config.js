@@ -20,14 +20,28 @@ const reactVender = ['react', 'react-dom', 'i18next', 'react-i18next', '@vscode/
 const svelteVender = ['svelte-i18n'];
 const vueVender = ['vue', 'vue-i18n'];
 
+function genRollupConfigByName(name) {
+  switch (name) {
+    case 'jwt':
+      return {
+        plugins: [
+          globals(),
+          builtins({ crypto: false })
+        ],
+        banner: 'window.module = {};'
+      };
+  }
+  return {
+    plugins: [],
+    banner: ''
+  };
+}
+
 const pageTask = fs
   .readdirSync(path.join(__dirname, "webview", "pages"))
   .map((input) => {
     const name = input.split(".")[0];
-    const plugins = name === 'jwt' ? [
-      globals(),
-      builtins({ crypto: false }),
-    ] : [];
+    const { plugins, banner } = genRollupConfigByName(name);
 
     return {
       input: "webview/pages/" + input,
@@ -37,7 +51,7 @@ const pageTask = fs
         'window': "'window'"
       },
       output: {
-        banner: 'window.module = {};',
+        banner: banner,
         sourcemap: !production,
         format: "iife",
         name: "app",
