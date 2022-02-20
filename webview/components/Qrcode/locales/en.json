@@ -1,0 +1,12 @@
+{
+  "tool.qrcode.errorCorrectionLevelRadioGroup.label": "Error Correction Level",
+  "tool.qrcode.renderTypeRadio.canvas.label": "Canvas",
+  "tool.qrcode.renderTypeRadio.img.label": "Image",
+  "tool.qrcode.renderTypeRadio.svg.label": "SVG",
+  "tool.qrcode.renderTypeRadioGroup.label": "Render Type",
+  "tool.qrcode.saveButton.label": "Save",
+  "tool.qrcode.sourceTextArea.label": "Source",
+  "tool.qrcode.title": "Qrcode Generator",
+  "tool.qrcode.versionTextField.label": "Version",
+  "tool.qrcode.versionValueMinMax.error.message": "Version value must between 0 and 40"
+}

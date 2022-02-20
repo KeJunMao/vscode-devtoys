@@ -11,6 +11,7 @@ import { UUID } from "../Panel/UUID";
 import { PanelType } from "../shared";
 import * as vscode from "vscode";
 import { Jwt } from "../Panel/Jwt";
+import { Qrcode } from "../Panel/Qrcode";
 
 export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
   if (!node) {
@@ -46,6 +47,9 @@ export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
       break;
     case PanelType.jwt:
       Jwt.createOrShow(context.extensionUri);
+      break;
+    case PanelType.qrcode:
+      Qrcode.createOrShow(context.extensionUri);
       break;
   }
 };
