@@ -1,0 +1,12 @@
+{
+  "tool.qrcode.errorCorrectionLevelRadioGroup.label": "纠错水平",
+  "tool.qrcode.renderTypeRadio.canvas.label": "Canvas",
+  "tool.qrcode.renderTypeRadio.img.label": "Image",
+  "tool.qrcode.renderTypeRadio.svg.label": "SVG",
+  "tool.qrcode.renderTypeRadioGroup.label": "渲染类型",
+  "tool.qrcode.saveButton.label": "保存",
+  "tool.qrcode.sourceTextArea.label": "源字符串",
+  "tool.qrcode.title": "二维码生成器",
+  "tool.qrcode.versionTextField.label": "版本",
+  "tool.qrcode.versionValueMinMax.error.message": "版本值必须介于0和40之间"
+}

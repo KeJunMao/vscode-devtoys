@@ -4,10 +4,7 @@ import { Category, IToolData, PanelType } from "../shared";
 import { DevToysNode } from "./DevToysNode";
 
 class ExplorerNodeManager implements Disposable {
-  private explorerNodeMap: Map<Category, DevToysNode[]> = new Map<
-    Category,
-    DevToysNode[]
-  >();
+  private explorerNodeMap: Map<Category, DevToysNode[]> = new Map<Category, DevToysNode[]>();
 
   initialize(): void {
     const coders: IToolData[] = [
@@ -71,6 +68,11 @@ class ExplorerNodeManager implements Disposable {
         label: i18n.t("view.devtoys.graphic.colorBlindnessSimulator.label"),
         tooltip: i18n.t("view.devtoys.graphic.colorBlindnessSimulator.tooltip"),
         panel: PanelType.colorBlindnessSimulator,
+      },
+      {
+        label: i18n.t("view.devtoys.graphic.qrcode.label"),
+        tooltip: i18n.t("view.devtoys.graphic.qrcode.tooltip"),
+        panel: PanelType.qrcode,
       },
     ];
 
@@ -201,5 +203,4 @@ class ExplorerNodeManager implements Disposable {
   }
 }
 
-export const explorerNodeManager: ExplorerNodeManager =
-  new ExplorerNodeManager();
+export const explorerNodeManager: ExplorerNodeManager = new ExplorerNodeManager();

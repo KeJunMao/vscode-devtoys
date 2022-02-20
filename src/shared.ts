@@ -12,6 +12,7 @@ export enum PanelType {
   regexTester = "regexTester",
   colorBlindnessSimulator = "colorBlindnessSimulator",
   jwt = "jwt",
+  qrcode = "qrcode",
 }
 
 export enum Category {
@@ -28,9 +29,5 @@ export interface IToolData {
   label: string;
   tooltip: string;
   panel: PanelType | Category;
-  iconPath?:
-    | string
-    | Uri
-    | { light: string | Uri; dark: string | Uri }
-    | ThemeIcon;
+  iconPath?: string | Uri | { light: string | Uri; dark: string | Uri } | ThemeIcon;
 }
