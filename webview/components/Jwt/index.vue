@@ -11,6 +11,7 @@ import {
 } from "@vscode/webview-ui-toolkit";
 import { defaultTokens } from "./defaultTokens";
 import { decode, sign, verify } from "./util";
+import { downloadPublicKeyIfPossible } from "./public-key-download";
 provideVSCodeDesignSystem().register(
   vsCodeTextArea(),
   vsCodeCheckbox(),
@@ -150,10 +151,10 @@ function decodeToken() {
     algorithm.value = decoded.header.alg?.toLowerCase() as Algorithm;
 
     if (isPublicKeyAlgorithm(decoded.header.alg)) {
-      // downloadPublicKeyIfPossible(decoded).then((publicKey) => {
-      //   publicKeyText.value = publicKey;
-      //   verifyToken();
-      // });
+      downloadPublicKeyIfPossible(decoded).then((publicKey) => {
+        publicKeyText.value = publicKey as string;
+        verifyToken();
+      });
     }
 
     headerText.value = JSON.stringify(decoded.header, null, 2);
