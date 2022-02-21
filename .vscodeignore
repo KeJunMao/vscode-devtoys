@@ -16,3 +16,4 @@ vsc-extension-quickstart.md
 **/*.map
 **/*.ts
 .DS_Store
+docs

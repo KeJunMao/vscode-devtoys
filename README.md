@@ -16,15 +16,44 @@
   </a>
 </p>
 
+## Demo
+
+- Base64
+- HTML
+- URL
+- JWT
+- JSON < > YAML
+- Number Base
+- UUID
+- Hash
+- Regex Tester
+- Color Blindness Simulator
+- Qrcode
+- and more!
+
+![all tools](./docs/img/all_tool.png)
+
+## Features
+
+### Search Tool
+
+![search tool](./docs/img/search_tool.png)
+
+### Automatically
+
+You can click this button to automatically run that you want tool!
+
+![automatically](./docs/img/automatically.png)
+
 ## Development
 
 To set up your environment to develop DevToys, run `yarn`.
 
-> Unlimited quality, quantity required, welcome contribution, use **React** or **Svelte**
+> Unlimited quality, quantity required, welcome contribution, use **React** or **Svelte** or **Vue**
 
 ### Add New Tool
 
-example add **JWT Encoder/Decoder** tool
+Example: add **JWT Encoder/Decoder** tool
 
 1. `yarn new`
 
@@ -43,7 +72,7 @@ example add **JWT Encoder/Decoder** tool
 ✨  Done in 15.52s.
 ```
 
-2. add `PanelType` in `src/shared.ts`
+2. Add `PanelType` in `src/shared.ts`
 
 ```ts
 enum PanelType {
@@ -52,7 +81,7 @@ enum PanelType {
 }
 ```
 
-3. add tree item in `src/explorer/explorerNodeManager.ts`,JWT tool is in Coders category,so edit
+3. Add tree item in `src/explorer/explorerNodeManager.ts`, JWT tool is a Coders category, so edit
 
 ```ts
  const coders: IToolData[] = [
@@ -65,7 +94,7 @@ enum PanelType {
 ]
 ```
 
-4. show tool in `src/commands/showTool.ts`
+4. Show tool in `src/commands/showTool.ts`
 
 ```ts
 switch (node.type) {
@@ -76,6 +105,6 @@ switch (node.type) {
 }
 ```
 
-5. Make JWT tool and I18N key, and then test the tool!
+5. Make JWT tool and i18N key, then test the tool!
 
 > NOTE: webview i18n file in `webview/components/TOOLNAME/locales`, extension i18n file in `locales`
