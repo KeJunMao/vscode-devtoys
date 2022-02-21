@@ -1,36 +1,42 @@
-<svg width="58" height="48" viewBox="0 0 58 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#filter0_d_1_5)">
-        <path
-            d="M8 3.5H50C51.933 3.5 53.5 5.067 53.5 7V39C53.5 40.933 51.933 42.5 50 42.5H8C6.067 42.5 4.5 40.933 4.5 39V7C4.5 5.067 6.067 3.5 8 3.5Z"
-            stroke="currentColor" shape-rendering="crispEdges" />
-    </g>
-    <path d="M8 3.5H50C51.933 3.5 53.5 5.067 53.5 7V11.5H4.5V7C4.5 5.067 6.067 3.5 8 3.5Z" stroke="currentColor" />
-    <circle cx="49.5" cy="7.5" r="2.5" fill="currentColor" />
-    <circle cx="42.5" cy="7.5" r="2.5" fill="currentColor" />
-    <circle cx="35.5" cy="7.5" r="2.5" fill="currentColor" />
-    <g filter="url(#filter1_d_1_5)">
-        <path
-            d="M46.1154 24.9155C45.721 24.5271 45.0879 24.5333 44.7012 24.9294L36.5757 33.2535C36.1891 33.6496 36.1953 34.2855 36.5896 34.6739L38.2527 36.3119C38.647 36.7003 39.2802 36.6941 39.6668 36.298L47.7923 27.974C48.179 27.5778 48.1728 26.9419 47.7784 26.5535L46.1154 24.9155Z"
-            fill="currentColor" />
-        <path
-            d="M47.7868 27.9906C48.1765 27.5975 48.1753 26.9615 47.784 26.57L39.561 18.3431C39.1697 17.9517 38.5365 17.9529 38.1468 18.346L36.5031 20.0036C36.1134 20.3967 36.1147 21.0327 36.506 21.4242L44.729 29.651C45.1203 30.0425 45.7534 30.0413 46.1432 29.6482L47.7868 27.9906Z"
-            fill="currentColor" />
-    </g>
-    <g filter="url(#filter2_d_1_5)">
-        <path
-            d="M24.3678 35.8561C23.8491 35.6664 23.5811 35.0918 23.7692 34.5725L29.4335 18.9402C29.6217 18.4209 30.1947 18.1537 30.7134 18.3434L32.9031 19.1439C33.4218 19.3335 33.6897 19.9082 33.5016 20.4275L27.8373 36.0598C27.6491 36.579 27.0761 36.8463 26.5574 36.6566L24.3678 35.8561Z"
-            fill="currentColor" />
-    </g>
-    <g filter="url(#filter3_d_1_5)">
-        <path
-            d="M10.9629 24.9155C11.3573 24.5271 11.9904 24.5333 12.3771 24.9294L20.5026 33.2535C20.8892 33.6496 20.883 34.2855 20.4887 34.6739L18.8256 36.3119C18.4313 36.7003 17.7981 36.6941 17.4115 36.298L9.28598 27.974C8.89931 27.5778 8.90553 26.9419 9.29988 26.5535L10.9629 24.9155Z"
-            fill="currentColor" />
-        <path
-            d="M9.29151 27.9906C8.90177 27.5975 8.90303 26.9615 9.29434 26.57L17.5173 18.3431C17.9086 17.9517 18.5418 17.9529 18.9315 18.346L20.5752 20.0036C20.9649 20.3967 20.9636 21.0327 20.5723 21.4242L12.3494 29.651C11.9581 30.0425 11.3249 30.0413 10.9352 29.6482L9.29151 27.9906Z"
-            fill="currentColor" />
+<svg width="66" height="64" viewBox="0 0 66 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="tools">
+        <g id="Background" filter="url(#filter0_d_1_5)">
+            <rect x="6" y="5" width="54" height="52" rx="4" stroke="currentColor" stroke-width="4"
+                shape-rendering="crispEdges" />
+        </g>
+        <path id="Top Bar" d="M10 5H56C58.2091 5 60 6.79086 60 9V16H6V9C6 6.79086 7.79086 5 10 5Z" stroke="currentColor"
+            stroke-width="4" />
+        <g id="Dots">
+            <circle id="Right" cx="52.5" cy="10.5" r="2.5" fill="currentColor" />
+            <circle id="Middle" cx="46.5" cy="10.5" r="2.5" fill="currentColor" />
+            <circle id="Left" cx="40.5" cy="10.5" r="2.5" fill="currentColor" />
+        </g>
+        <g id="Text">
+            <g id="Right_2" filter="url(#filter1_d_1_5)">
+                <path
+                    d="M50.1154 33.9155C49.721 33.5271 49.0879 33.5333 48.7012 33.9294L40.5757 42.2535C40.1891 42.6496 40.1953 43.2855 40.5896 43.6739L42.2527 45.3119C42.647 45.7003 43.2802 45.6941 43.6668 45.298L51.7923 36.974C52.179 36.5778 52.1728 35.9419 51.7784 35.5535L50.1154 33.9155Z"
+                    fill="currentColor" />
+                <path
+                    d="M51.7868 36.9906C52.1765 36.5975 52.1753 35.9615 51.784 35.57L43.561 27.3431C43.1697 26.9517 42.5365 26.9529 42.1468 27.346L40.5031 29.0036C40.1134 29.3967 40.1147 30.0327 40.506 30.4242L48.729 38.651C49.1203 39.0425 49.7534 39.0413 50.1432 38.6482L51.7868 36.9906Z"
+                    fill="currentColor" />
+            </g>
+            <g id="Middle_2" filter="url(#filter2_d_1_5)">
+                <path
+                    d="M28.3678 44.8561C27.8491 44.6664 27.5811 44.0918 27.7692 43.5725L33.4335 27.9402C33.6217 27.4209 34.1947 27.1537 34.7134 27.3434L36.9031 28.1439C37.4218 28.3335 37.6897 28.9082 37.5016 29.4275L31.8373 45.0598C31.6491 45.579 31.0761 45.8463 30.5574 45.6566L28.3678 44.8561Z"
+                    fill="currentColor" />
+            </g>
+            <g id="Left_2" filter="url(#filter3_d_1_5)">
+                <path
+                    d="M14.9629 33.9155C15.3573 33.5271 15.9904 33.5333 16.3771 33.9294L24.5026 42.2535C24.8892 42.6496 24.883 43.2855 24.4887 43.6739L22.8256 45.3119C22.4313 45.7003 21.7981 45.6941 21.4115 45.298L13.286 36.974C12.8993 36.5778 12.9055 35.9419 13.2999 35.5535L14.9629 33.9155Z"
+                    fill="currentColor" />
+                <path
+                    d="M13.2915 36.9906C12.9018 36.5975 12.903 35.9615 13.2943 35.57L21.5173 27.3431C21.9086 26.9517 22.5418 26.9529 22.9315 27.346L24.5752 29.0036C24.9649 29.3967 24.9636 30.0327 24.5723 30.4242L16.3494 38.651C15.9581 39.0425 15.3249 39.0413 14.9352 38.6482L13.2915 36.9906Z"
+                    fill="currentColor" />
+            </g>
+        </g>
     </g>
     <defs>
-        <filter id="filter0_d_1_5" x="0" y="0" width="58" height="48" filterUnits="userSpaceOnUse"
+        <filter id="filter0_d_1_5" x="0" y="0" width="66" height="64" filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -42,7 +48,7 @@
             <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_5" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_5" result="shape" />
         </filter>
-        <filter id="filter1_d_1_5" x="32.2117" y="15.0504" width="19.8666" height="26.5488" filterUnits="userSpaceOnUse"
+        <filter id="filter1_d_1_5" x="36.2117" y="24.0504" width="19.8666" height="26.5488" filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -54,7 +60,7 @@
             <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_5" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_5" result="shape" />
         </filter>
-        <filter id="filter2_d_1_5" x="19.7091" y="15.2823" width="17.8526" height="26.4353" filterUnits="userSpaceOnUse"
+        <filter id="filter2_d_1_5" x="23.7091" y="24.2823" width="17.8526" height="26.4353" filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -66,7 +72,7 @@
             <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_5" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_5" result="shape" />
         </filter>
-        <filter id="filter3_d_1_5" x="5" y="15.0504" width="19.8666" height="26.5488" filterUnits="userSpaceOnUse"
+        <filter id="filter3_d_1_5" x="9" y="24.0504" width="19.8666" height="26.5488" filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
