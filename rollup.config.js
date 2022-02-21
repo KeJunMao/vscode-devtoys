@@ -178,6 +178,6 @@ const venderTask = [
 ];
 
 export default [
-  // ...venderTask,
+  ...venderTask,
   ...pageTask
 ];
