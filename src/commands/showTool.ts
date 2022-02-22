@@ -1,17 +1,17 @@
+import * as vscode from "vscode";
 import { DevToysNode } from "../explorer/DevToysNode";
-import { Base64 } from "../Panel/base64";
+import { Base64 } from "../Panel/Base64";
 import { ColorBlindnessSimulator } from "../Panel/ColorBlindnessSimulator";
 import { Hash } from "../Panel/Hash";
 import { Html } from "../Panel/Html";
 import { JsonToYaml } from "../Panel/JsonToYaml";
+import { Jwt } from "../Panel/Jwt";
 import { NumberBase } from "../Panel/NumberBase";
+import { Qrcode } from "../Panel/Qrcode";
 import { RegexTester } from "../Panel/RegexTester";
 import { Url } from "../Panel/Url";
 import { UUID } from "../Panel/UUID";
 import { PanelType } from "../shared";
-import * as vscode from "vscode";
-import { Jwt } from "../Panel/Jwt";
-import { Qrcode } from "../Panel/Qrcode";
 
 export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
   if (!node) {
