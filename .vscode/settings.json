@@ -29,4 +29,7 @@
     "vue",
     "general"
   ],
+  "conventionalCommits.scopes": [
+    "ci"
+  ],
 }

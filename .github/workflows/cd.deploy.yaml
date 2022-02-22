@@ -6,7 +6,6 @@ on:
 
 jobs:
   Release:
-    needs: Deploy-Root
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
