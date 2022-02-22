@@ -1,0 +1,23 @@
+name: CD:- Release Extension
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  Release:
+    needs: Deploy-Root
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Node Dependencies
+        run: |
+          yarn install --frozen-lockfile
+      - name: Generate Semantic Release
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
