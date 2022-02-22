@@ -9,6 +9,7 @@
   "engines": {
     "vscode": "^1.64.0"
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/KeJunMao/vscode-devtoys"
@@ -78,11 +79,11 @@
     "compile": "yarn run i18n:build && rollup -c && webpack",
     "watch": "concurrently \"yarn run i18n:dev\" \"rollup -c -w\" \"webpack --watch\"",
     "package": "yarn run i18n:build && rollup -c && webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
+    "compile-tests": "tsc -p . --outDir test-out",
+    "watch-tests": "tsc -p . -w --outDir test-out",
     "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
+    "test": "node ./test-out/test/runTest.js",
     "i18n:build": "esno scripts/build-i18n.ts",
     "i18n:dev": "nodemon -w ./locales -e json --exec \"yarn run i18n:build\"",
     "new": "plop"
