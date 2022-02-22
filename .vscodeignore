@@ -1,6 +1,7 @@
 .vscode/**
 .vscode-test/**
 node_modules/**
+test-out/**
 out/**/*.map
 src/**
 webview/**
