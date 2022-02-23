@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import RegexColorize from "regex-colorize";
 import "regex-colorize/themes/sweetest.css";
 import "./CodeBox.css";
@@ -68,6 +68,13 @@ export default ({
       }, 700)
     );
   };
+  const handlePaste = (event: React.ClipboardEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const text = event.clipboardData.getData("text/plain");
+    setTimeout(() => {
+      document.execCommand("insertHTML", false, text);
+    }, 0);
+  };
   useEffect(() => {
     const timer = setTimeout(() => {
       handleKeyUp();
@@ -87,6 +94,8 @@ export default ({
             className="regex-input__control regex"
             contentEditable={true}
             onKeyUp={handleKeyUp}
+            onPaste={handlePaste}
+            suppressContentEditableWarning={true}
           >
             {regex?.source}
           </div>

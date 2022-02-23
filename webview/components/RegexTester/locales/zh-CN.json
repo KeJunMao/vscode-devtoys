@@ -7,5 +7,6 @@
   "tool.regexTester.codebox.option.u": "Unicode",
   "tool.regexTester.codebox.option.y": "Sticky",
   "tool.regexTester.matchbox.label": "匹配结果",
+  "tool.regexTester.onError.timeout": "表达式的执行时间超过300毫秒。",
   "tool.regexTester.title": "正则表达式测试"
 }

@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import "./MatchBox.css";
 import autosize from "autosize";
 import { useTranslation } from "react-i18next";
+import WokerBuilder from "../woker/WokerBuilder";
+import MainWorker from "../woker/MainWorker";
 let typeTimeout: number | undefined;
 
 export default ({
@@ -14,6 +16,7 @@ export default ({
   text?: string;
   onInput: (value: string) => void;
 }) => {
+  let worker: Worker | undefined;
   const { t } = useTranslation();
 
   const textarea = useRef<HTMLTextAreaElement>(null);
@@ -53,25 +56,8 @@ export default ({
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
   }
-  const boxEdited = () => {
-    let text = getMatchTextOnly();
+  const highlightHtml = (matches: RegExpMatchArray[]) => {
     let markedText = "";
-    let matches;
-    if (!regex) {
-      return;
-    }
-    if (regex.flags.includes("g")) {
-      matches = [...text.matchAll(regex)];
-    } else {
-      // if matches? add to array else empty []
-      matches = text.match(regex) ? [text.match(regex)] : [];
-    }
-    // each match will have
-    //   0 -> match
-    //   1,2,etc -> group matches
-    //   index -> pos of
-    //   input -> input str
-    //   length -> number of matches incl groups
     let lastEndPos = 0;
     let lastPart = "";
     for (let match of matches) {
@@ -103,9 +89,48 @@ export default ({
       resizeTextarea();
     }, 50);
   };
+  const boxEdited = () => {
+    let text = getMatchTextOnly();
+    let matches = [];
+    let timmer: number | undefined;
+    if (!regex) {
+      return;
+    }
+    if (worker) {
+      worker.terminate();
+      worker = undefined;
+    }
+    worker = new WokerBuilder(MainWorker) as Worker;
+    return new Promise<void>((r, j) => {
+      if (!worker) {
+        return;
+      }
+      timmer = setTimeout(() => {
+        worker?.terminate();
+        worker = undefined;
+        j();
+      }, 300);
+      worker.onmessage = (e) => {
+        clearTimeout(timmer);
+        matches = e.data;
+        highlightHtml(matches);
+        r();
+      };
+      worker?.postMessage({
+        text,
+        regex,
+      });
+    });
+  };
 
   useEffect(() => {
-    boxEdited();
+    boxEdited()?.catch(() => {
+      highlightHtml([]);
+      tsvscode.postMessage({
+        type: "onError",
+        value: t("tool.regexTester.onError.timeout"),
+      });
+    });
   }, [text, regex]);
 
   return (

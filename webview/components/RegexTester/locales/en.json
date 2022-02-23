@@ -7,5 +7,6 @@
   "tool.regexTester.codebox.option.u": "Unicode",
   "tool.regexTester.codebox.option.y": "Sticky",
   "tool.regexTester.matchbox.label": "Matches",
+  "tool.regexTester.onError.timeout": "The expression took longer than 300ms to execute.",
   "tool.regexTester.title": "Regex Tester"
 }
