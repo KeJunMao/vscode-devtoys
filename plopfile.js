@@ -95,7 +95,7 @@ module.exports = function (plop) {
         // COMPONENT
         {
           type: 'add',
-          path: `webview/components/{{pascalCase label}}/index.${componentExt}`,
+          path: `webview/components/${framework}/{{pascalCase label}}/index.${componentExt}`,
           templateFile: `plop-template/webview/component/${framework}/index.hbs`,
           data: {
             title: titleCase(data.title),
@@ -116,17 +116,17 @@ module.exports = function (plop) {
         // COMPONENT I18N
         {
           type: 'add',
-          path: 'webview/components/{{pascalCase label}}/locales/en.json',
+          path: `webview/components/${framework}/{{pascalCase label}}/locales/en.json`,
           templateFile: 'plop-template/webview/component/i18n/en.json',
         },
         {
           type: 'add',
-          path: 'webview/components/{{pascalCase label}}/locales/zh-CN.json',
+          path: `webview/components/${framework}/{{pascalCase label}}/locales/zh-CN.json`,
           templateFile: 'plop-template/webview/component/i18n/zh-CN.json',
         },
         {
           type: 'add',
-          path: 'webview/components/{{pascalCase label}}/i18n.ts',
+          path: `webview/components/${framework}/{{pascalCase label}}/i18n.ts`,
           templateFile: `plop-template/webview/component/${framework}/i18n.hbs`,
         },
         // // TODO: TREE src/Tree
