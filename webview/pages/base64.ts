@@ -1,5 +1,5 @@
-import App from "../components/Base64/index.svelte";
-import "../components/Base64/i18n";
+import App from "../components/svelte/Base64/index.svelte";
+import "../components/svelte/Base64/i18n";
 const app = new App({
   target: document.body,
 });

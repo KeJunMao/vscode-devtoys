@@ -1,20 +1,8 @@
 {
-  "include": [
-    "./**/*",
-  ],
-  "exclude": [
-    "../node_modules/*",
-    "./components/*"
-  ],
   "compilerOptions": {
     "types": [
       "react"
     ],
-    "paths": {
-      "@vue/runtime-dom": [
-        "./empty.d.ts"
-      ]
-    },
     "lib": [
       "esnext",
       "dom"
@@ -23,7 +11,8 @@
     "strict": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true
+    "skipLibCheck": true,
   }
 }

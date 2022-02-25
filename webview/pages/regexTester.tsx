@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import "../components/RegexTester/i18n";
-import App from "../components/RegexTester/index";
+import "../components/react/RegexTester/i18n";
+import App from "../components/react/RegexTester/index";
 
 ReactDOM.render(
   <React.StrictMode>

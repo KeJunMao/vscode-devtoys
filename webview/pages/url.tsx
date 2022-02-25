@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import "../components/Url/i18n";
-import App from "../components/Url/index";
+import "../components/react/Url/i18n";
+import App from "../components/react/Url/index";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import {encode,decode} from './he.js';
   import { encode, decode } from "./he";
   import { _ } from "svelte-i18n";
 

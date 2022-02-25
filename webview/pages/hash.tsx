@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import "../components/Hash/i18n";
-import App from "../components/Hash/index";
+import "../components/react/Hash/i18n";
+import App from "../components/react/Hash/index";
 
 ReactDOM.render(
   <React.StrictMode>

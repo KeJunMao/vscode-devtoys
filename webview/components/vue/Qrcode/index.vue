@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import QRCode from "qrcode";
 import { QRCodeErrorCorrectionLevel } from "qrcode";
-import VsCodeRadioGroup from "../../common/vue/VsCodeRadioGroup.vue";
-import VsCodeRadio from "../../common/vue/VsCodeRadio.vue";
-import VsCodeTextArea from "../../common/vue/VsCodeTextArea.vue";
-import VsCodeTextField from "../../common/vue/VsCodeTextField.vue";
-import VsCodeButton from "../../common/vue/VsCodeButton.vue";
+import VsCodeRadioGroup from "../common/VsCodeRadioGroup.vue";
+import VsCodeRadio from "../common/VsCodeRadio.vue";
+import VsCodeTextArea from "../common/VsCodeTextArea.vue";
+import VsCodeTextField from "../common/VsCodeTextField.vue";
+import VsCodeButton from "../common/VsCodeButton.vue";
 import { ref, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -127,7 +127,10 @@ function handleSave() {
       break;
     case RenderType.canvas:
       const dataUrl = cnavasEl.value.toDataURL("image/png");
-      const url = dataUrl.replace(/^data:image\/png/, "data:application/octet-stream");
+      const url = dataUrl.replace(
+        /^data:image\/png/,
+        "data:application/octet-stream"
+      );
       downloadByUrl(url, "qrcode.png");
       break;
   }
@@ -136,18 +139,29 @@ function handleSave() {
 <template>
   <h1>{{ $t("tool.qrcode.title") }}</h1>
   <VsCodeRadioGroup v-model="renderType">
-    <label slot="label">{{ $t("tool.qrcode.renderTypeRadioGroup.label") }}</label>
-    <VsCodeRadio v-for="type in renderTypeList" :value="type.type" :key="type.name">{{
-      type.name
-    }}</VsCodeRadio>
+    <label slot="label">{{
+      $t("tool.qrcode.renderTypeRadioGroup.label")
+    }}</label>
+    <VsCodeRadio
+      v-for="type in renderTypeList"
+      :value="type.type"
+      :key="type.name"
+      >{{ type.name }}</VsCodeRadio
+    >
   </VsCodeRadioGroup>
 
   <VsCodeTextField v-model.number="version" type="number">
     {{ $t("tool.qrcode.versionTextField.label") }}
   </VsCodeTextField>
   <VsCodeRadioGroup v-model="errorCorrectionLevel">
-    <label slot="label">{{ $t("tool.qrcode.errorCorrectionLevelRadioGroup.label") }}</label>
-    <VsCodeRadio v-for="(item, index) in errorCorrectionLevelList" :key="index" :value="item.value">
+    <label slot="label">{{
+      $t("tool.qrcode.errorCorrectionLevelRadioGroup.label")
+    }}</label>
+    <VsCodeRadio
+      v-for="(item, index) in errorCorrectionLevelList"
+      :key="index"
+      :value="item.value"
+    >
       {{ item.name }}
     </VsCodeRadio>
   </VsCodeRadioGroup>
@@ -161,7 +175,11 @@ function handleSave() {
   }}</vs-code-button>
   <div class="result-wapper" v-if="sourceText">
     <img v-if="renderType === RenderType.img" :src="imageSrc" alt="qrcode" />
-    <div class="result-svg" v-else-if="renderType === RenderType.svg" v-html="svgCode"></div>
+    <div
+      class="result-svg"
+      v-else-if="renderType === RenderType.svg"
+      v-html="svgCode"
+    ></div>
     <canvas v-show="renderType === RenderType.canvas" ref="cnavasEl"></canvas>
   </div>
 </template>

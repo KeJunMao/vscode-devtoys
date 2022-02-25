@@ -1,5 +1,5 @@
-import App from "../components/JsonToYaml/index.svelte";
-import "../components/JsonToYaml/i18n";
+import App from "../components/svelte/JsonToYaml/index.svelte";
+import "../components/svelte/JsonToYaml/i18n";
 
 const app = new App({
   target: document.body,

@@ -1,5 +1,5 @@
-import App from "../components/UUID/index.svelte";
-import "../components/UUID/i18n";
+import App from "../components/svelte/UUID/index.svelte";
+import "../components/svelte/UUID/i18n";
 
 const app = new App({
   target: document.body,
