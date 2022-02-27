@@ -1,0 +1,8 @@
+{
+  "tool.timestamp.dateTime.textField.label": "Date Time",
+  "tool.timestamp.now.textField.label": "Current UNIX Timestamp",
+  "tool.timestamp.start.button.label": "Start",
+  "tool.timestamp.stop.button.label": "Stop",
+  "tool.timestamp.timestamp.textField.label": "UNIX Timestamp",
+  "tool.timestamp.title": "UNIX Timestamp"
+}

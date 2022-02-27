@@ -9,6 +9,7 @@ import { Jwt } from "../Panel/Jwt";
 import { NumberBase } from "../Panel/NumberBase";
 import { Qrcode } from "../Panel/Qrcode";
 import { RegexTester } from "../Panel/RegexTester";
+import { Timestamp } from "../Panel/Timestamp";
 import { Url } from "../Panel/Url";
 import { UUID } from "../Panel/UUID";
 import { PanelType } from "../shared";
@@ -50,6 +51,9 @@ export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
       break;
     case PanelType.qrcode:
       Qrcode.createOrShow(context.extensionUri);
+      break;
+    case PanelType.timestamp:
+      Timestamp.createOrShow(context.extensionUri);
       break;
   }
 };

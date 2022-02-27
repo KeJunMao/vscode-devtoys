@@ -1,0 +1,8 @@
+{
+  "tool.timestamp.dateTime.textField.label": "日期时间",
+  "tool.timestamp.now.textField.label": "当前 UNIX 时间戳",
+  "tool.timestamp.start.button.label": "开始",
+  "tool.timestamp.stop.button.label": "停止",
+  "tool.timestamp.timestamp.textField.label": "UNIX 时间戳",
+  "tool.timestamp.title": "UNIX 时间戳"
+}
