@@ -17,6 +17,15 @@ export class Timestamp extends ToolPanel<Timestamp> {
     );
   }
 
+  public static canBeTreatedByTool(data: string): boolean | PanelType {
+    try {
+      new Date(data);
+      return PanelType.timestamp;
+    } catch (error) {
+      return false;
+    }
+  }
+
   public dispose(): void {
     super.dispose();
     Timestamp.currentPanel = undefined;
