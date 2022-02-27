@@ -1,0 +1,6 @@
+{
+  "tool.cron.crontextField.label": "CRON 表达式",
+  "tool.cron.firstTextArea.label": "前七次执行",
+  "tool.cron.lastTextArea.label": "后七次执行",
+  "tool.cron.title": "CRON 模拟器"
+}

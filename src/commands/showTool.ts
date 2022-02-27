@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import { DevToysNode } from "../explorer/DevToysNode";
 import { Base64 } from "../Panel/Base64";
 import { ColorBlindnessSimulator } from "../Panel/ColorBlindnessSimulator";
+import { Cron } from "../Panel/Cron";
 import { Hash } from "../Panel/Hash";
 import { Html } from "../Panel/Html";
 import { JsonToYaml } from "../Panel/JsonToYaml";
@@ -54,6 +55,9 @@ export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
       break;
     case PanelType.timestamp:
       Timestamp.createOrShow(context.extensionUri);
+      break;
+    case PanelType.cron:
+      Cron.createOrShow(context.extensionUri);
       break;
   }
 };

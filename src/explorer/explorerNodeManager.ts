@@ -4,7 +4,10 @@ import { Category, IToolData, PanelType } from "../shared";
 import { DevToysNode } from "./DevToysNode";
 
 class ExplorerNodeManager implements Disposable {
-  private explorerNodeMap: Map<Category, DevToysNode[]> = new Map<Category, DevToysNode[]>();
+  private explorerNodeMap: Map<Category, DevToysNode[]> = new Map<
+    Category,
+    DevToysNode[]
+  >();
 
   initialize(): void {
     const coders: IToolData[] = [
@@ -81,7 +84,13 @@ class ExplorerNodeManager implements Disposable {
       },
     ];
 
-    const others: IToolData[] = [];
+    const others: IToolData[] = [
+      {
+        label: i18n.t("view.devtoys.others.cron.label"),
+        tooltip: i18n.t("view.devtoys.others.cron.tooltip"),
+        panel: PanelType.cron,
+      },
+    ];
 
     this.explorerNodeMap.set(
       Category.coders,
@@ -208,4 +217,5 @@ class ExplorerNodeManager implements Disposable {
   }
 }
 
-export const explorerNodeManager: ExplorerNodeManager = new ExplorerNodeManager();
+export const explorerNodeManager: ExplorerNodeManager =
+  new ExplorerNodeManager();

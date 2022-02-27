@@ -1,6 +1,5 @@
 import { ThemeIcon, Uri } from "vscode";
 
-
 export enum PanelType {
   null = 0,
   jsonToYaml = "jsonToYaml",
@@ -14,7 +13,8 @@ export enum PanelType {
   colorBlindnessSimulator = "colorBlindnessSimulator",
   jwt = "jwt",
   qrcode = "qrcode",
-  timestamp = "timestamp"
+  timestamp = "timestamp",
+  cron = "cron",
 }
 
 export enum Category {
@@ -31,5 +31,9 @@ export interface IToolData {
   label: string;
   tooltip: string;
   panel: PanelType | Category;
-  iconPath?: string | Uri | { light: string | Uri; dark: string | Uri } | ThemeIcon;
+  iconPath?:
+    | string
+    | Uri
+    | { light: string | Uri; dark: string | Uri }
+    | ThemeIcon;
 }

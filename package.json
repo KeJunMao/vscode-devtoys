@@ -118,6 +118,7 @@
     "@vscode/test-electron": "^2.0.3",
     "autosize": "^5.0.1",
     "concurrently": "^7.0.0",
+    "cron-parser": "^4.2.1",
     "crypto-js": "^4.1.1",
     "esbuild": "^0.14.22",
     "eslint": "^8.6.0",

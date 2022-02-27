@@ -1,0 +1,6 @@
+{
+  "tool.cron.crontextField.label": "CRON Expression",
+  "tool.cron.firstTextArea.label": "First Seven Execution Times",
+  "tool.cron.lastTextArea.label": "Last Seven Execution Times",
+  "tool.cron.title": "CRON Simulator"
+}
