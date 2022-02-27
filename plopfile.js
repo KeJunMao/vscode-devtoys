@@ -41,14 +41,15 @@ module.exports = function (plop) {
           'Convertors',
           'Generators',
           'Text',
-          'Graphic'
+          'Graphic',
+          'Others'
         ],
         filter(val) {
           switch (val) {
             case 'Encoder/Decoder':
-              return 'Coders';
+              return 'coders';
             default:
-              return val;
+              return val.toLowerCase();
           }
         }
       },
