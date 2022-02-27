@@ -1,5 +1,6 @@
 import { ThemeIcon, Uri } from "vscode";
 
+
 export enum PanelType {
   null = 0,
   jsonToYaml = "jsonToYaml",
@@ -13,6 +14,7 @@ export enum PanelType {
   colorBlindnessSimulator = "colorBlindnessSimulator",
   jwt = "jwt",
   qrcode = "qrcode",
+  timestamp = "timestamp"
 }
 
 export enum Category {

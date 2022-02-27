@@ -1,16 +1,23 @@
 <template>
-  <vscode-text-field :value="modelValue || value" @input="handleOnInput" :type="type">
+  <vscode-text-field
+    :value="modelValue || value"
+    @input="handleOnInput"
+    :type="type"
+  >
     <slot></slot>
   </vscode-text-field>
 </template>
 
 <script setup lang="ts">
-import { vsCodeTextField, provideVSCodeDesignSystem } from "@vscode/webview-ui-toolkit";
+import {
+  vsCodeTextField,
+  provideVSCodeDesignSystem,
+} from "@vscode/webview-ui-toolkit";
 provideVSCodeDesignSystem().register(vsCodeTextField());
 
 const props = defineProps<{
   modelValue?: string | number;
-  value?: string;
+  value?: string | number;
   type?: string;
 }>();
 const emit = defineEmits<{
