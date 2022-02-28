@@ -29,7 +29,7 @@
     }
     try {
       const yamlObj = YAML.parse(yamlStr);
-      const jsonStr = JSON.stringify(yamlObj);
+      const jsonStr = JSON.stringify(yamlObj, null, 2);
       return jsonStr;
     } catch (e) {
       tsvscode.postMessage({ type: "onError", value: String(e) });

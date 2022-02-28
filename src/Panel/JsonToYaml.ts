@@ -2,7 +2,7 @@ import { PanelType } from "../shared";
 import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
 import i18n from "../i18n";
-import { parse as YAMLParse } from "yaml";
+// import { parse as YAMLParse } from "yaml";
 export class JsonToYaml extends ToolPanel<JsonToYaml> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
     super(panel, extensionUri, PanelType.jsonToYaml, "svelte");
@@ -23,16 +23,20 @@ export class JsonToYaml extends ToolPanel<JsonToYaml> {
       JSON.parse(data);
       result = true;
     } catch (e) {
-      try {
-        if (/[a-z0-9]+:/.test(data)) {
-          YAMLParse(data);
-          result = true;
-        } else {
-          result = false;
-        }
-      } catch (e) {
-        result = false;
-      }
+      // TODO: mabe we have check if it is yaml or best func?
+      // now we just skip check and return false
+      // try {
+      //   // 4+ line yaml
+      //   if (data.split("\n").length > 4) {
+      //     YAMLParse(data);
+      //     result = true;
+      //   } else {
+      //     result = false;
+      //   }
+      // } catch (e) {
+      //   result = false;
+      // }
+      result = false;
     }
     return result ? PanelType.jsonToYaml : false;
   }
