@@ -90,6 +90,11 @@ class ExplorerNodeManager implements Disposable {
         tooltip: i18n.t("view.devtoys.others.cron.tooltip"),
         panel: PanelType.cron,
       },
+      {
+        label: i18n.t("view.devtoys.others.userAgent.label"),
+        tooltip: i18n.t("view.devtoys.others.userAgent.tooltip"),
+        panel: PanelType.userAgent,
+      },
     ];
 
     this.explorerNodeMap.set(

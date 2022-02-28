@@ -1,0 +1,10 @@
+{
+  "tool.userAgent.result.browser": "Browser",
+  "tool.userAgent.result.cpu": "CPU",
+  "tool.userAgent.result.device": "Device",
+  "tool.userAgent.result.engine": "Engine",
+  "tool.userAgent.result.os": "OS",
+  "tool.userAgent.resultTextArea.label": "Result",
+  "tool.userAgent.title": "UserAgent Parser",
+  "tool.userAgent.uaTextField.label": "UA"
+}

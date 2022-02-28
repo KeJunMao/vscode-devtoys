@@ -12,6 +12,7 @@ import { Qrcode } from "../Panel/Qrcode";
 import { RegexTester } from "../Panel/RegexTester";
 import { Timestamp } from "../Panel/Timestamp";
 import { Url } from "../Panel/Url";
+import { UserAgent } from "../Panel/UserAgent";
 import { UUID } from "../Panel/UUID";
 import { PanelType } from "../shared";
 
@@ -58,6 +59,9 @@ export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
       break;
     case PanelType.cron:
       Cron.createOrShow(context.extensionUri);
+      break;
+    case PanelType.userAgent:
+      UserAgent.createOrShow(context.extensionUri);
       break;
   }
 };

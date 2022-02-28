@@ -15,6 +15,7 @@ export enum PanelType {
   qrcode = "qrcode",
   timestamp = "timestamp",
   cron = "cron",
+  userAgent = "userAgent",
 }
 
 export enum Category {

@@ -1,0 +1,10 @@
+{
+  "tool.userAgent.result.browser": "浏览器",
+  "tool.userAgent.result.cpu": "架构",
+  "tool.userAgent.result.device": "设备",
+  "tool.userAgent.result.engine": "内核",
+  "tool.userAgent.result.os": "操作系统",
+  "tool.userAgent.resultTextArea.label": "解析结果",
+  "tool.userAgent.title": "UserAgent 解析",
+  "tool.userAgent.uaTextField.label": "UA"
+}
