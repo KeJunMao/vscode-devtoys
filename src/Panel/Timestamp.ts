@@ -2,6 +2,7 @@ import { PanelType } from "../shared";
 import { ToolPanel } from "../common/ToolPanel";
 import * as vscode from "vscode";
 import i18n from "../i18n";
+import { isValidDate } from "../utils";
 
 export class Timestamp extends ToolPanel<Timestamp> {
   constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
@@ -19,8 +20,13 @@ export class Timestamp extends ToolPanel<Timestamp> {
 
   public static canBeTreatedByTool(data: string): boolean | PanelType {
     try {
-      new Date(data);
-      return PanelType.timestamp;
+      const d = new Date(data);
+      const e = new Date(Number(data));
+      if (isValidDate(d) || isValidDate(e)) {
+        return PanelType.timestamp;
+      } else {
+        return false;
+      }
     } catch (error) {
       return false;
     }

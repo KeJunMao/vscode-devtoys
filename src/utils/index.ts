@@ -19,3 +19,7 @@ export async function asyncFilter<T>(
     )
   ).filter((i) => i !== fail);
 }
+
+export function isValidDate(d: Date): boolean {
+  return d instanceof Date && !isNaN(d.getTime());
+}
