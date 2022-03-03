@@ -18,6 +18,7 @@ import { PanelType } from "../shared";
 
 export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
   if (!node) {
+    vscode.commands.executeCommand("devtoys.searchTool");
     return;
   }
   switch (node.panel) {
