@@ -16,6 +16,8 @@
   </a>
 </p>
 
+[简体中文](./README_zh-CN.md) ｜ [English](./README.md)
+
 ## Demo
 
 - Base64
@@ -24,14 +26,16 @@
 - JWT
 - JSON < > YAML
 - Number Base
+- Timestamp
+- CURL To Code
 - UUID
 - Hash
 - Regex Tester
 - Color Blindness Simulator
 - Qrcode
-- Timestamp
 - CRON
-- and more!
+- UserAgent
+- and more coming!
 
 ![all tools](./docs/img/all_tool.png)
 
