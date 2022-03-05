@@ -7,6 +7,11 @@ export class ToolPanel<V> {
   static allPanel: Set<any> = new Set();
 
   private readonly _panel: vscode.WebviewPanel;
+
+  public get panel(): vscode.WebviewPanel {
+    return this._panel;
+  }
+
   private readonly _extensionUri: vscode.Uri;
   private _disposables: vscode.Disposable[] = [];
   private _type: PanelType;
@@ -76,7 +81,7 @@ export class ToolPanel<V> {
     return false;
   }
 
-  private async _update() {
+  protected async _update() {
     const webview = this._panel.webview;
 
     this._panel.webview.html = this._getHtmlForWebview(webview);

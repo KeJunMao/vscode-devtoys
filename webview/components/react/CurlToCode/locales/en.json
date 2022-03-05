@@ -1,0 +1,4 @@
+{
+  "tool.curlToCode.commandTextArea.label": "Curl Command",
+  "tool.curlToCode.title": "Convert Curl Commands To Code"
+}
