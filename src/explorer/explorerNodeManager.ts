@@ -48,6 +48,11 @@ class ExplorerNodeManager implements Disposable {
         tooltip: i18n.t("view.devtoys.convertors.timestamp.tooltip"),
         panel: PanelType.timestamp,
       },
+      {
+        label: i18n.t("view.devtoys.convertors.curlToCode.label"),
+        tooltip: i18n.t("view.devtoys.convertors.curlToCode.tooltip"),
+        panel: PanelType.curlToCode,
+      },
     ];
 
     const generators: IToolData[] = [

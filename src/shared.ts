@@ -16,6 +16,7 @@ export enum PanelType {
   timestamp = "timestamp",
   cron = "cron",
   userAgent = "userAgent",
+  curlToCode = "curlToCode",
 }
 
 export enum Category {
