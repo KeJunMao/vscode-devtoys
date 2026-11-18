@@ -1,0 +1,86 @@
+# Module: showTool
+
+**File:** `\src\commands\showTool.ts`
+
+## Overview
+
+Module `showTool` contains 0 analyzed entities.
+
+```
+import * as vscode from "vscode";
+import { DevToysNode } from "../explorer/DevToysNode";
+import { Base64 } from "../Panel/Base64";
+import { ColorBlindnessSimulator } from "../Panel/ColorBlindnessSimulator";
+import { Cron } from "../Panel/Cron";
+import { CurlToCode } from "../Panel/CurlToCode";
+import { Hash } from "../Panel/Hash";
+import { Html } from "../Panel/Html";
+import { JsonToYaml } from "../Panel/JsonToYaml";
+import { Jwt } from "../Panel/Jwt";
+import { NumberBase } from "../Panel/NumberBase";
+import { Qrcode } from "../Panel/Qrcode";
+import { RegexTester } from "../Panel/RegexTester";
+import { Timestamp } from "../Panel/Timestamp";
+import { Url } from "../Panel/Url";
+import { UserAgent } from "../Panel/UserAgent";
+import { UUID } from "../Panel/UUID";
+import { PanelType } from "../shared";
+
+export default (context: vscode.ExtensionContext) => (node?: DevToysNode) => {
+  if (!node) {
+    vscode.commands.executeCommand("devtoys.searchTool");
+    return;
+  }
+  switch (node.panel) {
+    case PanelType.jsonToYaml:
+      JsonToYaml.createOrShow(context.extensionUri);
+      break;
+    case PanelType.numberBase:
+      NumberBase.createOrShow(context.extensionUri);
+      break;
+    case PanelType.base64:
+      Base64.createOrShow(context.extensionUri);
+      break;
+    case PanelType.uuid:
+      UUID.createOrShow(context.extensionUri);
+      break;
+    case PanelType.html:
+      Html.createOrShow(context.extensionUri);
+      break;
+    case PanelType.url:
+      Url.createOrShow(context.extensionUri);
+      break;
+    case PanelType.hash:
+      Hash.createOrShow(context.extensionUri);
+      break;
+    case PanelType.regexTester:
+      RegexTester.createOrShow(context.extensionUri);
+      break;
+    case PanelType.colorBlindnessSimulator:
+      ColorBlindnessSimulator.createOrShow(context.extensionUri);
+      break;
+    case PanelType.jwt:
+      Jwt.createOrShow(context.extensionUri);
+      break;
+    case PanelType.qrcode:
+      Qrcode.createOrShow(context.extensionU
+```
+
+## Key Components
+
+| Entity | Type | Description |
+|--------|------|-------------|
+| _none_ | — | — |
+
+## Git History
+
+- Commits: 9
+- Authors: 4
+- Bug fixes: 1
+- Features: 8
+
+## Note
+
+Connect an NVIDIA Nemotron model (Ollama locally or Nebius Serverless) and re-run
+`documentor generate` to upgrade these pages to AI-generated narrative docs with
+purpose, usage examples, and gotchas.
